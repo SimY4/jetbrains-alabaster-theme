@@ -1,7 +1,7 @@
 [versions]
 changelog = "2.4.0"
 intelliJPlatform = "2.9.0"
-kotlin = "2.1.20"
+kotlin = "2.2.21"
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
