@@ -10,7 +10,7 @@
 A light & dark color schemes with minimal amount of highlighting for IntelliJ IDEA.
 </p>
 
-<p>Alalbaster for IntelliJ is fine tuned for:</p>
+<p>Alabaster for IntelliJ is fine tuned for:</p>
 
 <ul>
   <li>Clojure</li>
@@ -24,7 +24,7 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
 </p>
 
 <p>This is a simple wrapper around <a href="https://github.com/tonsky/intellij-alabaster">Alabaster Color Scheme</a></p>
-<p>LICENSE: <a href="https://github.com/simy4/alabaster-shmalabaster/blob/main/LICENSE">MIT</a></p>
+<p>LICENSE: <a href="https://github.com/simy4/jetbrains-alabaster-theme/blob/main/LICENSE">MIT</a></p>
 ]]></description>
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">

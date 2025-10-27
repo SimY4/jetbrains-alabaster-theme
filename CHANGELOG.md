@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# alabaster-shmalabaster Changelog
+# Alabaster Theme Changelog
 
 ## [Unreleased]
 
