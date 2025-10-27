@@ -1,8 +1,8 @@
 # Alabaster Theme
 
 ![Build](https://github.com/SimY4/jetbrains-alabaster-theme/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/28855-alabaster-theme.svg)](https://plugins.jetbrains.com/plugin/28855-alabaster-theme)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/28855-alabaster-theme.svg)](https://plugins.jetbrains.com/plugin/28855-alabaster-theme)
 
 Alabaster theme for Jetbrains inspired by [tonsky's](https://github.com/tonsky) alabaster for Sublime Text
 
