@@ -1,0 +1,17 @@
+{
+  "author": "Alex Simkin",
+  "dark": false,
+  "name": "Alabaster BG",
+  "editorScheme": "/themes/alabaster-bg.xml",
+  "colors": {
+    "blue": "#B4D8FD"
+  },
+  "ui": {
+    "EditorTabs": {
+      "underlineColor": "blue"
+    },
+    "*": {
+      "selectionBackground": "blue"
+    }
+  }
+}

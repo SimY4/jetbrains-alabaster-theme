@@ -1,15 +1,38 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.simy4.alabastershmalabaster</id>
-    <name>alabaster-shmalabaster</name>
-    <vendor>simy4</vendor>
+    <id>com.github.simy4.alabaster</id>
+    <name>Alabaster Theme</name>
+    <vendor url="https://github.com/simy4">SimY4</vendor>
+    <description><![CDATA[
+<h2>Alabaster Color Scheme</h2>
 
+<p>
+A light & dark color schemes with minimal amount of highlighting for IntelliJ IDEA.
+</p>
+
+<p>Alalbaster for IntelliJ is fine tuned for:</p>
+
+<ul>
+  <li>Clojure</li>
+  <li>Java</li>
+  <li>Kotlin</li>
+  <li>Rust</li>
+</ul>
+
+<p>
+Other languages work perfectly fine as well, but may do some extra unnecessary highlighting in some language-specific places.
+</p>
+
+<p>This is a simple wrapper around <a href="https://github.com/tonsky/intellij-alabaster">Alabaster Color Scheme</a></p>
+<p>LICENSE: <a href="https://github.com/simy4/alabaster-shmalabaster/blob/main/LICENSE">MIT</a></p>
+]]></description>
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.simy4.alabastershmalabaster.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.simy4.alabastershmalabaster.startup.MyProjectActivity" />
+        <themeProvider id="com.github.simy4.alabaster.light" path="/themes/alabaster.theme.json"/>
+        <themeProvider id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg.theme.json"/>
+        <themeProvider id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark.theme.json"/>
+        <bundledColorScheme id="com.github.simy4.alabaster.light" path="/themes/alabaster"/>
+        <bundledColorScheme id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg"/>
+        <bundledColorScheme id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark"/>
     </extensions>
 </idea-plugin>
