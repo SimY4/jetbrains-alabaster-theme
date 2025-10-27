@@ -2,7 +2,7 @@
   "author": "Alex Simkin",
   "dark": true,
   "name": "Alabaster Dark",
-  "editorScheme": "/alabaster-dark.xml",
+  "editorScheme": "/theme/alabaster-dark.xml",
   "colors": {
     "Grey1": "#1E1F22",
     "Grey2": "#292929",
