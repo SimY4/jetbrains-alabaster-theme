@@ -31,7 +31,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
 
-      - name: Build plugin
+      - name: ⚙️ Build plugin
         run: ./gradlew buildPlugin
 
       - name: Prepare Plugin Artifact
