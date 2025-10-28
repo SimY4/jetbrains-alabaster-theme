@@ -28,12 +28,6 @@ jobs:
         with:
           cache-read-only: true
 
-      - name: Export Properties
-        run: |
-          PROPERTIES="$(./gradlew properties --console=plain -q)"
-          echo "version=$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')" >> $GITHUB_ENV
-          echo "name=$(echo "$PROPERTIES" | grep "^pluginName:" | cut -f2- -d ' ')" >> $GITHUB_ENV
-
       - name: Patch Changelog
         if: ${{ github.event.release.body != '' }}
         env:

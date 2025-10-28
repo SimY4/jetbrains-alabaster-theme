@@ -6,11 +6,7 @@
 
 ### Added
 
-- Alabaster Theme plugin icon
-
 ### Changed
-
-- More work on porting Alabaster Themes
 
 ### Deprecated
 
@@ -18,11 +14,22 @@
 
 ### Fixed
 
-- Release pipeline
-
-- Theme and colour scheme name clashes
-
 ### Security
+
+## 0.2.0 - 2025-10-29
+
+### Added
+
+- Alabaster Theme plugin icon
+
+### Changed
+
+- More work on porting Alabaster Themes
+
+### Fixed
+
+- Release pipeline
+- Theme and colour scheme name clashes
 
 ## 0.1.0 - 2025-10-27
 
