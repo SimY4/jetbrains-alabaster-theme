@@ -252,16 +252,14 @@
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_BRACES">
       <value />
@@ -286,53 +284,45 @@
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "6086be" }}" />
         <option name="EFFECT_TYPE" value="1" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
         <option name="EFFECT_TYPE" value="1" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_DOC_MARKUP">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_DOT">
       <value>
@@ -346,15 +336,13 @@
       <value />
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_GLOBAL_VARIABLE">
       <value />
@@ -369,45 +357,39 @@
       <value />
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
-    {% if light %}
       <value>
+    {% if light %}
         <option name="FOREGROUND" value="7a3e9d" />
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="9876aa" />
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_KEYWORD">
       <value />
     </option>
     <option name="DEFAULT_LABEL">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_LINE_COMMENT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_LOCAL_VARIABLE">
       <value />
@@ -441,7 +423,9 @@
     </option>
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+      </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
       <value />
@@ -450,15 +434,13 @@
       <value />
     </option>
     <option name="DEFAULT_STRING">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DEFAULT_TAG">
       <value>
@@ -469,16 +451,14 @@
       <value />
     </option>
     <option name="DEFAULT_VALID_STRING_ESCAPE">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="DELETED_TEXT_ATTRIBUTES">
       <value />
@@ -697,62 +677,52 @@
       <value />
     </option>
     <option name="INLAY_DEFAULT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
+      <value>
     {% if bg %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="INLINE_STACK_FRAMES">
       <value />
@@ -794,15 +764,13 @@
       <value />
     </option>
     <option name="JSON.PROPERTY_KEY">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
       <value />
@@ -838,16 +806,14 @@
       <value />
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD"/>
     <option name="KOTLIN_QUEST">
@@ -1257,103 +1223,85 @@
       <value />
     </option>
     <option name="REGEXP.BRACES">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.BRACKETS">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.CHARACTER">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.META">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.PARENTHS">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.QUANTIFIER">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
+      <value>
     {% if bg %}
-      <value>
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
     <option name="REST.BOLD">
@@ -1548,16 +1496,14 @@
     <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Named Argument">
-    {% if bg %}
       <value>
+    {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="Scala Predefined types">
       <value />
@@ -1584,19 +1530,17 @@
       <value />
     </option>
     <option name="TEXT">
-    {% if light %}
       <value>
+    {% if light %}
         <option name="FOREGROUND" value="0" />
         <option name="BACKGROUND" value="f7f7f7" />
         <option name="EFFECT_TYPE" value="5" />
-      </value>
     {% else %}
-      <value>
         <option name="FOREGROUND" value="cecece" />
         <option name="BACKGROUND" value="1e1e1e" />
         <option name="EFFECT_TYPE" value="5" />
-      </value>
     {% endif %}
+      </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value />
