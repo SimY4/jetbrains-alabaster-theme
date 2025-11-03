@@ -1,7 +1,18 @@
-import org.jetbrains.changelog.Changelog
-import org.jetbrains.changelog.date
+import io.pebbletemplates.pebble.PebbleEngine
+import io.pebbletemplates.pebble.loader.FileLoader
+import org.jetbrains.changelog.*
 import org.jetbrains.kotlin.gradle.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath(libs.pebble)
+  }
+}
 
 plugins {
   id("java") // Java support
@@ -71,6 +82,36 @@ changelog {
   groups.set(listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"))
 }
 
+tasks.register("generate") {
+  notCompatibleWithConfigurationCache("Pebble classes are not serializable")
+
+  doLast {
+    val engine = PebbleEngine.Builder().loader(FileLoader().apply {
+      prefix = "src/main/templates/"
+      suffix = ".pebble"
+    }).build()
+    val template = engine.getTemplate("alabaster")
+
+    val themesDir = file("src/main/resources/themes")
+    if (!themesDir.exists()) {
+      themesDir.mkdirs()
+    }
+
+    template.evaluate(file("src/main/resources/themes/alabaster.xml").writer(), mapOf(
+      "variant" to "light",
+      "flavour" to ""
+    ))
+    template.evaluate(file("src/main/resources/themes/alabaster-bg.xml").writer(), mapOf(
+      "variant" to "light",
+      "flavour" to "bg"
+    ))
+    template.evaluate(file("src/main/resources/themes/alabaster-dark.xml").writer(), mapOf(
+      "variant" to "dark",
+      "flavour" to ""
+    ))
+  }
+}
+
 tasks {
   // Set the JVM compatibility versions
   providers.gradleProperty("javaVersion").get().let {
@@ -84,6 +125,10 @@ tasks {
         jvmTarget = JvmTarget.fromTarget(it)
       }
     }
+  }
+
+  buildPlugin {
+    dependsOn("generate")
   }
 
   wrapper {

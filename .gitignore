@@ -2,3 +2,4 @@
 .idea
 build
 .intellijPlatform
+src/resources/themes/*.xml
