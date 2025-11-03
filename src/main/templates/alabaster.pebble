@@ -304,7 +304,7 @@
     <option name="DEFAULT_DOC_COMMENT_TAG">
     {% if bg %}
       <value>
-        <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
+        <option name="BACKGROUND" value="{{ light ? "fffabc" : "6086be" }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     {% else %}
@@ -1260,15 +1260,105 @@
     <option name="RDOC_URL">
       <value />
     </option>
-    <option name="REGEXP.BRACES" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.BRACKETS" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.CHARACTER" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.CHAR_CLASS" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.ESC_CHARACTER" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.META" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.PARENTHS" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.QUANTIFIER" baseAttributes="DEFAULT_STRING"/>
-    <option name="REGEXP.QUOTE_CHARACTER" baseAttributes="DEFAULT_STRING"/>
+    <option name="REGEXP.BRACES">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.BRACKETS">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.CHARACTER">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.CHAR_CLASS">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.ESC_CHARACTER">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.META">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.PARENTHS">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.QUANTIFIER">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
+    <option name="REGEXP.QUOTE_CHARACTER">
+    {% if bg %}
+      <value>
+        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+      </value>
+    {% else %}
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+      </value>
+    {% endif %}
+    </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
     <option name="REST.BOLD">
       <value />
