@@ -9,6 +9,20 @@
     "selection": "#B4D8FD"
   },
   "ui": {
+    "Islands": 1,
+    "Island": {
+      "arc": 20,
+      "arc.compact": 16,
+      "borderWidth": 5,
+      "borderWidth.compact": 4,
+      "borderColor": "BackgroundMid",
+      "inactiveAlpha": 0.44,
+      "inactiveAlphaInStatusBar": {
+        "os.mac": 0.2,
+        "os.windows": 0.2,
+        "os.linux": 0.15
+      }
+    },
     "EditorTabs": {
       "underlineColor": "dark blue"
     },
