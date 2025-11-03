@@ -4,14 +4,14 @@
   "name": "Alabaster BG",
   "editorScheme": "/themes/alabaster-bg.xml",
   "colors": {
-    "blue": "#B4D8FD"
+    "selection": "#B4D8FD"
   },
   "ui": {
     "EditorTabs": {
-      "underlineColor": "blue"
+      "underlineColor": "selection"
     },
     "*": {
-      "selectionBackground": "blue"
+      "selectionBackground": "selection"
     }
   }
 }

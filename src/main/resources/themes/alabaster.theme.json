@@ -4,17 +4,19 @@
   "name": "Alabaster",
   "editorScheme": "/themes/alabaster.xml",
   "colors": {
-    "blue": "#B4D8FD",
     "dark blue": "#007ACC",
-    "grey": "#F7F7F7"
+    "background": "#F7F7F7",
+    "selection": "#B4D8FD"
   },
   "ui": {
     "EditorTabs": {
       "underlineColor": "dark blue"
     },
     "*": {
-      "background":  "grey",
-      "selectionBackground": "blue"
+      "background":  "background",
+      "disabledBackground": "background",
+      "inactiveBackground": "background",
+      "selectionBackground": "selection"
     }
   }
 }

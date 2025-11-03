@@ -264,14 +264,10 @@
     {% endif %}
     </option>
     <option name="DEFAULT_BRACES">
-      <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
-      </value>
+      <value />
     </option>
     <option name="DEFAULT_BRACKETS">
-      <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
-      </value>
+      <value />
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value />
