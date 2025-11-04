@@ -32,6 +32,13 @@
       <value />
     </option>
     <option name="BAD_CHARACTER">
+      <value>
+    {% if bg %}
+        <option name="FOREGROUND" value="c33" />
+        <option name="BACKGROUND" value="ffe0e0" />
+    {%  else %}
+        <option name="FOREGROUND" value="ff0000" />
+    {% endif %}
       <value />
     </option>
     <option name="BASH.BINARY_DATA">
