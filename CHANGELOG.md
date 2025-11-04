@@ -8,13 +8,30 @@
 
 ### Changed
 
+- Islands support for Alabaster Themes
+- Metadata highlighting
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
+- Fixed regex and block comment tag highlighting
+- Fixed debugger colours
+- Fixed highlighting of matching braces
+- Fixed highlighting for search results
+- Fixes for XPath and Shell script highlighting
+- Dim down file colours
+
 ### Security
+
+## 0.2.1 - 2025-11-03
+
+### Changed
+
+- New templating engine for generating color schemes across different variants and flavors of the theme.
+- More work on porting Alabaster Themes
 
 ## 0.2.0 - 2025-10-29
 
