@@ -15,6 +15,7 @@
 ### Fixed
 
 - Fixed errors highlighting
+- Fixed ctrl clickable highlighting
 
 ### Security
 
