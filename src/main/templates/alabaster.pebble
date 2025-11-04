@@ -10,13 +10,13 @@
     <property name="ideVersion">2022.3.1.0.0</property>
   </metaInfo>
   <colors>
-    <option name="CARET_COLOR" value="{{ light ? "7acc" : "CD974B" }}"/>
+    <option name="CARET_COLOR" value="{{ light ? "007ACC" : "CD974B" }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{ light ? "f7f7f7" : "1e1e1e" }}"/>
     <option name="DOC_COMMENT_LINK" value="{{ light ? "aa3731" : "ffc66e" }}"/>
     <option name="GUTTER_BACKGROUND" value="{{ light ? "f7f7f7" : "1e1e1e" }}"/>
     <option name="READONLY_BACKGROUND" value="{{ light ? "f7f7f7" : "1e1e1e" }}" />
-    <option name="SELECTION_BACKGROUND" value="{{ light ? "b4d8fd" : "293334" }}" />
+    <option name="SELECTION_BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
   <attributes>
@@ -281,7 +281,7 @@
     </option>
     <option name="DEFAULT_COMMA">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
@@ -332,7 +332,7 @@
     </option>
     <option name="DEFAULT_DOT">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
       </value>
     </option>
     <option name="DEFAULT_ENTITY">
@@ -410,7 +410,7 @@
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
@@ -430,7 +430,7 @@
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
@@ -450,7 +450,7 @@
     </option>
     <option name="DEFAULT_TAG">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "6e6e6e" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
       </value>
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
@@ -517,7 +517,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="dedede"/>
+        <option name="BACKGROUND" value="f0f0f0"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
@@ -1051,7 +1051,10 @@
       <value />
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
     </option>
     <option name="MATCHED_TAG_NAME" baseAttributes="MATCHED_BRACE_ATTRIBUTES"/>
     <option name="MESSAGE_ARGUMENT">
@@ -1569,11 +1572,9 @@
     {% if light %}
         <option name="FOREGROUND" value="0" />
         <option name="BACKGROUND" value="f7f7f7" />
-        <option name="EFFECT_TYPE" value="5" />
     {% else %}
         <option name="FOREGROUND" value="cecece" />
         <option name="BACKGROUND" value="1e1e1e" />
-        <option name="EFFECT_TYPE" value="5" />
     {% endif %}
       </value>
     </option>
