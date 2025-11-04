@@ -289,11 +289,10 @@
       <value>
     {% if bg %}
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "6086be" }}" />
-        <option name="EFFECT_TYPE" value="1" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-        <option name="EFFECT_TYPE" value="1" />
     {% endif %}
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
@@ -350,15 +349,9 @@
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
-    {% if light %}
-        <option name="FOREGROUND" value="7a3e9d" />
+        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
-    {% else %}
-        <option name="FOREGROUND" value="9876aa" />
-        <option name="EFFECT_COLOR" value="ff0000" />
-        <option name="EFFECT_TYPE" value="2" />
-    {% endif %}
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
@@ -496,7 +489,17 @@
     <option name="ERL_RECORDS" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="ERL_VARIABLES" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="ERRORS_ATTRIBUTES">
-      <value />
+      <value>
+    {% if bg %}
+        <option name="FOREGROUND" value="c33" />
+        <option name="BACKGROUND" value="ffe0e0" />
+    {%  else %}
+        <option name="FOREGROUND" value="ff0000" />
+    {% endif %}
+        <option name="EFFECT_COLOR" value="ff0000" />
+        <option name="ERROR_STRIPE_COLOR" value="cf5b56" />
+        <option name="EFFECT_TYPE" value="2" />
+      </value>
     </option>
     <option name="EVALUATED_EXPRESSION_ATTRIBUTES">
       <value />

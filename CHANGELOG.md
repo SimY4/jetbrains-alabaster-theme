@@ -8,12 +8,22 @@
 
 ### Changed
 
-- Islands support for Alabaster Themes
-- Metadata highlighting
-
 ### Deprecated
 
 ### Removed
+
+### Fixed
+
+- Fixed errors highlighting
+
+### Security
+
+## 0.2.2 - 2025-11-04
+
+### Changed
+
+- Islands support for Alabaster Themes
+- Metadata highlighting
 
 ### Fixed
 
@@ -23,8 +33,6 @@
 - Fixed highlighting for search results
 - Fixes for XPath and Shell script highlighting
 - Dim down file colours
-
-### Security
 
 ## 0.2.1 - 2025-11-03
 
