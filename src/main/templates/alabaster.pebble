@@ -1420,7 +1420,10 @@
     </option>
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_TYPE" value="0" />
+      </value>
     </option>
     <option name="SLIM_BAD_CHARACTER">
       <value />
@@ -1568,7 +1571,10 @@
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_TYPE" value="0" />
+      </value>
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value />
