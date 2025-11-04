@@ -23,21 +23,6 @@
     <option name="ABSTRACT_METHOD_ATTRIBUTES">
       <value />
     </option>
-    <option name="ANGLE_BRACKETS_RAINBOW_COLOR0">
-      <value />
-    </option>
-    <option name="ANGLE_BRACKETS_RAINBOW_COLOR1">
-      <value />
-    </option>
-    <option name="ANGLE_BRACKETS_RAINBOW_COLOR2">
-      <value />
-    </option>
-    <option name="ANGLE_BRACKETS_RAINBOW_COLOR3">
-      <value />
-    </option>
-    <option name="ANGLE_BRACKETS_RAINBOW_COLOR4">
-      <value />
-    </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
       <value />
     </option>
@@ -401,7 +386,10 @@
       <value />
     </option>
     <option name="DEFAULT_METADATA">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="999999" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
