@@ -26,6 +26,14 @@
     "EditorTabs": {
       "underlineColor": "dark blue"
     },
+    "FileColor": {
+      "Blue": "background",
+      "Green": "background",
+      "Orange": "background",
+      "Rose": "background",
+      "Violet": "background",
+      "Yellow": "background"
+    },
     "*": {
       "background":  "background",
       "disabledBackground": "background",
