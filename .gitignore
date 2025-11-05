@@ -1,5 +1,5 @@
-.gradle
-.idea
-build
-.intellijPlatform
-src/main/resources/themes/*.xml
+.gradle/
+.idea/
+build/
+.intellijPlatform/
+src/main/resources/themes/
