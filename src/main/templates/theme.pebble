@@ -10,7 +10,7 @@
   "name": "Alabaster{{ name_suffix }}",
   "editorScheme": "/themes/alabaster{{ scheme_suffix }}.xml",
   "colors": {
-    "background": "#{{ ligth ? "EEEEEE" : "2E2E2E" }}",
+    "background": "#{{ light ? "EEEEEE" : "2E2E2E" }}",
   {% if bg %}
     "primaryBackground": "#{{ light ? "FFFFFF" : "000000" }}",
     "selection": "#{{ light ? "B4D8FD" : "293334" }}"
