@@ -10,12 +10,12 @@
   "name": "Alabaster{{ name_suffix }}",
   "editorScheme": "/themes/alabaster{{ scheme_suffix }}.xml",
   "colors": {
-    "background": "#EEEEEE",
+    "background": "#{{ ligth ? "EEEEEE" : "2E2E2E" }}",
   {% if bg %}
     "primaryBackground": "#{{ light ? "FFFFFF" : "000000" }}",
     "selection": "#{{ light ? "B4D8FD" : "293334" }}"
   {% else %}
-    "primaryBackground": "#{{ light ? "F7F7F7" : "1e1e1e" }}",
+    "primaryBackground": "#{{ light ? "F7F7F7" : "0E1415" }}",
     "selection": "#{{ light ? "B4D8FD" : "293334" }}"
   {% endif %}
   },
