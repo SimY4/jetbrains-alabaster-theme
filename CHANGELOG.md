@@ -6,6 +6,8 @@
 
 ### Added
 
+- New template for generating theme JSON files for all different variants and flavors of the theme.
+
 ### Changed
 
 ### Deprecated
@@ -16,6 +18,7 @@
 
 - Fixed errors highlighting
 - Fixed ctrl clickable highlighting
+- Fixed sidebar being hardly distinguishable from editor background
 
 ### Security
 
