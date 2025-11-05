@@ -1,0 +1,55 @@
+{# @pebvariable name="variant" type="String" #}
+{# @pebvariable name="flavour" type="String" #}
+{% set light = variant == "light" %}
+{% set bg = flavour == "bg" %}
+{% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
+{% set scheme_suffix = (light ? "" : "-dark") ~ (bg ? "-bg" : "") %}
+{
+  "author": "Alex Simkin",
+  "dark": {{ light ? "false" : "true" }},
+  "name": "Alabaster{{ name_suffix }}",
+  "editorScheme": "/themes/alabaster{{ scheme_suffix }}.xml",
+  "colors": {
+    "background": "#EEEEEE",
+  {% if bg %}
+    "primaryBackground": "#{{ light ? "FFFFFF" : "000000" }}",
+    "selection": "#{{ light ? "B4D8FD" : "293334" }}"
+  {% else %}
+    "primaryBackground": "#{{ light ? "F7F7F7" : "1e1e1e" }}",
+    "selection": "#{{ light ? "B4D8FD" : "293334" }}"
+  {% endif %}
+  },
+  "ui": {
+    "Islands": 1,
+    "Island": {
+      "arc": 20,
+      "arc.compact": 16,
+      "borderWidth": 5,
+      "borderWidth.compact": 4,
+      "borderColor": "BackgroundMid",
+      "inactiveAlpha": 0.44,
+      "inactiveAlphaInStatusBar": {
+        "os.mac": 0.2,
+        "os.windows": 0.2,
+        "os.linux": 0.15
+      }
+    },
+    "*": {
+      "background":  "background",
+      "disabledBackground": "background",
+      "inactiveBackground": "background",
+      "selectionBackground": "selection"
+    },
+    "Editor": {
+      "background": "primaryBackground"
+    },
+    "FileColor": {
+      "Blue": "background",
+      "Green": "background",
+      "Orange": "background",
+      "Rose": "background",
+      "Violet": "background",
+      "Yellow": "background"
+    }
+  }
+}

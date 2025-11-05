@@ -15,10 +15,10 @@ buildscript {
 }
 
 plugins {
-  id("java") // Java support
-  alias(libs.plugins.kotlin) // Kotlin support
-  alias(libs.plugins.intelliJPlatform) // IntelliJ Platform Gradle Plugin
-  alias(libs.plugins.changelog) // Gradle Changelog Plugin
+  id("java")
+  alias(libs.plugins.kotlin)
+  alias(libs.plugins.intelliJPlatform)
+  alias(libs.plugins.changelog)
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -90,25 +90,34 @@ tasks.register("generate") {
       prefix = "src/main/templates/"
       suffix = ".pebble"
     }).build()
-    val template = engine.getTemplate("alabaster")
+    val themeTemplate = engine.getTemplate("theme")
+    val schemeTemplate = engine.getTemplate("alabaster")
 
     val themesDir = file("src/main/resources/themes")
     if (!themesDir.exists()) {
       themesDir.mkdirs()
     }
 
-    template.evaluate(file("src/main/resources/themes/alabaster.xml").writer(), mapOf(
-      "variant" to "light",
-      "flavour" to ""
-    ))
-    template.evaluate(file("src/main/resources/themes/alabaster-bg.xml").writer(), mapOf(
-      "variant" to "light",
-      "flavour" to "bg"
-    ))
-    template.evaluate(file("src/main/resources/themes/alabaster-dark.xml").writer(), mapOf(
-      "variant" to "dark",
-      "flavour" to ""
-    ))
+    listOf("light", "dark").forEach { variant ->
+      listOf("", "bg").forEach { flavour ->
+        if (variant == "dark" && flavour == "bg") return@forEach
+
+        val fileSuffix = listOf(variant, flavour).joinToString("") {
+          when (it) {
+            "dark" -> "-dark"
+            "bg" -> "-bg"
+            else -> ""
+          }
+        }
+
+        val context = mapOf(
+          "variant" to variant,
+          "flavour" to flavour
+        )
+        schemeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.xml").writer(), context)
+        themeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer(), context)
+      }
+    }
   }
 }
 
