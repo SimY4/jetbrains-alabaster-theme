@@ -6,9 +6,10 @@
 
 ### Added
 
-- New template for generating theme JSON files for all different variants and flavors of the theme.
-
 ### Changed
+
+- Errors highlighting to be more subtle
+- More fixes to calls vs declaration highlighting
 
 ### Deprecated
 
@@ -16,11 +17,19 @@
 
 ### Fixed
 
+### Security
+
+## 0.2.3 - 2025-11-05
+
+### Added
+
+- New template for generating theme JSON files for all different variants and flavors of the theme.
+
+### Fixed
+
 - Fixed errors highlighting
 - Fixed ctrl clickable highlighting
 - Fixed sidebar being hardly distinguishable from editor background
-
-### Security
 
 ## 0.2.2 - 2025-11-04
 

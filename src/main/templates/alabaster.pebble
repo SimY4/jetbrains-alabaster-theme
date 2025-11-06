@@ -4,6 +4,10 @@
 {% set bg = flavour == "bg" %}
 {% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
 {% set parent_scheme = light ? "Default" : "Darcula" %}
+{# ----- #}
+{% set text = light ? "00000" : "cecece" %}
+{% set punctuation = light ? "777" : "708B8D" %}
+{# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
   <metaInfo>
     <property name="ide">idea</property>
@@ -103,11 +107,11 @@
       <value />
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
-    <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES">
-      <value />
-    </option>
+    <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
     <option name="CSS.BRACKETS">
       <value />
     </option>
@@ -174,8 +178,8 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "0" : "cecece" }}"/>
-        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}"/>
+        <option name="FOREGROUND" value="{{ text }}"/>
+        <option name="EFFECT_COLOR" value="{{ text }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
@@ -252,34 +256,44 @@
     </option>
     <option name="DEFAULT_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "0" : "cecece" }}" />
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
+{% block "comment" %}
     {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
         <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
     {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="DEFAULT_BRACES">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_BRACKETS">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_COMMA">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
@@ -289,12 +303,7 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
@@ -309,42 +318,36 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="DEFAULT_DOC_MARKUP">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="DEFAULT_DOT">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_ENTITY">
       <value />
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
-    {% if bg %}
+{% block "declaration" %}
+      {% if bg %}
         <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-    {% else %}
+      {% else %}
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-    {% endif %}
+      {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="DEFAULT_GLOBAL_VARIABLE">
@@ -354,7 +357,9 @@
       <value />
     </option>
     <option name="DEFAULT_INSTANCE_FIELD">
-      <value />
+      <value>
+    {{ block("declaration") }}
+      </value>
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value />
@@ -371,21 +376,12 @@
     </option>
     <option name="DEFAULT_LABEL">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-    {% endif %}
+    {{ block("declaration") }}
       </value>
     </option>
     <option name="DEFAULT_LINE_COMMENT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="DEFAULT_LOCAL_VARIABLE">
@@ -404,7 +400,7 @@
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
@@ -424,14 +420,18 @@
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
-      <value />
+      <value>
+    {{ block("declaration") }}
+      </value>
     </option>
     <option name="DEFAULT_STATIC_METHOD">
-      <value />
+      <value>
+    {{ block("declaration") }}
+      </value>
     </option>
     <option name="DEFAULT_STRING">
       <value>
@@ -444,7 +444,7 @@
     </option>
     <option name="DEFAULT_TAG">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "777" : "708B8D" }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
@@ -623,7 +623,7 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "0" : "cecece" }}" />
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -632,7 +632,7 @@
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="HTML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "0" : "cecece" }}" />
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
@@ -688,12 +688,7 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
@@ -707,37 +702,27 @@
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
-    {% endif %}
+    {{ block("declaration") }}
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="INLINE_STACK_FRAMES">
       <value />
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
+    <option name="INSTANCE_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
       <value />
     </option>
@@ -799,14 +784,23 @@
       <value />
     </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="KOTLIN_DYNAMIC_PROPERTY_CALL">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="KOTLIN_ENUM_ENTRY" baseAttributes="DEFAULT_STATIC_FIELD" />
     <option name="KOTLIN_EXCLEXCL">
       <value />
+    </option>
+    <option name="KOTLIN_EXTENSION_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
       <value />
@@ -817,15 +811,14 @@
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
-    <option name="KOTLIN_PACKAGE_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD"/>
+    <option name="KOTLIN_PACKAGE_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="KOTLIN_QUEST">
       <value />
     </option>
@@ -939,40 +932,20 @@
       <value />
     </option>
     <option name="MARK_CLASS_ATTRIBUTES">
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
     </option>
     <option name="MARK_CLION_REGION_ATTRIBUTES">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="MARK_COMMENT_ATTRIBUTES">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
       </value>
     </option>
     <option name="MARK_RIDER_REGION_ATTRIBUTES">
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
     </option>
     <option name="MARKDOWN_BLOCK_QUOTE_MARKER">
       <value />
@@ -1054,7 +1027,7 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_COLOR" value="{{ text }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -1434,7 +1407,7 @@
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_COLOR" value="{{ text }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
@@ -1520,9 +1493,26 @@
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR4">
       <value />
     </option>
-    <option name="STATIC_METHOD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_METHOD"/>
-    <option name="STATIC_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_FIELD"/>
-    <option name="STATIC_FINAL_FIELD_ATTRIBUTES" baseAttributes="STATIC_FIELD_ATTRIBUTES"/>
+    <option name="STATIC_METHOD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
+    <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
+    <option name="STATIC_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
+    <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="STYLUS_VARIABLE">
       <value />
     </option>
@@ -1540,12 +1530,12 @@
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Named Argument">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
-    {% endif %}
+    {{ block("comment") }}
+      </value>
+    </option>
+    <option name="Scala Object method call">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="Scala Predefined types">
@@ -1574,18 +1564,12 @@
     </option>
     <option name="TEXT">
       <value>
-    {% if light %}
-        <option name="FOREGROUND" value="0" />
-        <option name="BACKGROUND" value="f7f7f7" />
-    {% else %}
-        <option name="FOREGROUND" value="cecece" />
-        <option name="BACKGROUND" value="1e1e1e" />
-    {% endif %}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_COLOR" value="{{ text }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
@@ -1636,7 +1620,7 @@
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ light ? "0" : "cecece" }}" />
+        <option name="EFFECT_COLOR" value="{{ text }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
@@ -1661,7 +1645,7 @@
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "0" : "cecece" }}" />
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="XPATH.FUNCTION">
