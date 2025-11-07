@@ -6,6 +6,8 @@
 
 ### Added
 
+- New `true`, `false` and `null` keywords annotator  
+
 ### Changed
 
 - Errors highlighting to be more subtle

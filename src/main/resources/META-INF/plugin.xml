@@ -28,9 +28,12 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
 ]]></description>
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
+        <annotator implementationClass="com.github.simy4.alabaster.KeywordAnnotator"/>
+
         <themeProvider id="com.github.simy4.alabaster.light" path="/themes/alabaster.theme.json"/>
         <themeProvider id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg.theme.json"/>
         <themeProvider id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark.theme.json"/>
+
         <bundledColorScheme id="com.github.simy4.alabaster.light" path="/themes/alabaster"/>
         <bundledColorScheme id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg"/>
         <bundledColorScheme id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark"/>
