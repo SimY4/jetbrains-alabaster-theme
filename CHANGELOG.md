@@ -6,12 +6,9 @@
 
 ### Added
 
-- New `true`, `false` and `null` keywords annotator  
+- New `true`, `false` and `null` keywords annotator
 
 ### Changed
-
-- Errors highlighting to be more subtle
-- More fixes to calls vs declaration highlighting
 
 ### Deprecated
 
@@ -20,6 +17,13 @@
 ### Fixed
 
 ### Security
+
+## 0.2.4 - 2025-11-08
+
+### Changed
+
+- Errors highlighting to be more subtle
+- More fixes to calls vs declaration highlighting
 
 ## 0.2.3 - 2025-11-05
 
