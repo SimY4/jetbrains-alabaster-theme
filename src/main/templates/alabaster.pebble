@@ -756,9 +756,7 @@
       <value />
     </option>
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
-    <option name="JS.DECORATOR">
-      <value />
-    </option>
+    <option name="JS.DECORATOR" baseAttributes="DEFAULT_METADATA"/>
     <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
     <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
@@ -1203,9 +1201,7 @@
     <option name="PY.ANNOTATION">
       <value />
     </option>
-    <option name="PY.DECORATOR">
-      <value />
-    </option>
+    <option name="PY.DECORATOR" baseAttributes="DEFAULT_METADATA"/>
     <option name="PY.BUILTIN_NAME">
       <value />
     </option>

@@ -13,10 +13,15 @@
 ### Removed
 
 ### Fixed
-
-- Editor background colors not having an effect 
+- JS and Python decorators highlighting
 
 ### Security
+
+## 0.2.5 - 2025-11-08
+
+### Fixed
+
+- Editor background colors not having an effect
 
 ## 0.2.4 - 2025-11-08
 
