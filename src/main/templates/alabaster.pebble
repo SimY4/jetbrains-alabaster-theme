@@ -1227,10 +1227,14 @@
       <value />
     </option>
     <option name="PY.PREDEFINED_DEFINITION">
-      <value />
+      <value>
+    {{ block("declaration") }}
+      </value>
     </option>
     <option name="PY.PREDEFINED_USAGE">
-      <value />
+      <value>
+    {{ block("text") }}
+      </value>
     </option>
     <option name="PY.SELF_PARAMETER">
       <value />

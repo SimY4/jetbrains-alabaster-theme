@@ -15,6 +15,7 @@
 ### Fixed
 - JS and Python decorators highlighting
 - JS regex highlighting
+- Python predefined definitions highlighting
 - Fixed closure braces boldness
 - Fixed Kotlin properties highlighting
 - Fixed Kotlin colon highlighting
