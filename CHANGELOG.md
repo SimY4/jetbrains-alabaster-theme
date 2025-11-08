@@ -8,16 +8,22 @@
 
 ### Changed
 
-- Errors highlighting to be more subtle
-- More fixes to calls vs declaration highlighting
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
+- Editor background colors not having an effect 
+
 ### Security
+
+## 0.2.4 - 2025-11-08
+
+### Changed
+
+- Errors highlighting to be more subtle
+- More fixes to calls vs declaration highlighting
 
 ## 0.2.3 - 2025-11-05
 

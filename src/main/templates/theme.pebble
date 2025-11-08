@@ -4,21 +4,16 @@
 {% set bg = flavour == "bg" %}
 {% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
 {% set scheme_suffix = (light ? "" : "-dark") ~ (bg ? "-bg" : "") %}
+{# ----- #}
+{% set background = light ? "EEEEEE" : "2E2E2E" %}
+{% set primaryBackground = bg ? (light ? "FFFFFF" : "1E1E1E") : (light ? "F7F7F7" : "1E1E1E") %}
+{% set selection = light ? "B4D8FD" : "293334"  %}
+{# ----- #}
 {
   "author": "Alex Simkin",
   "dark": {{ light ? "false" : "true" }},
   "name": "Alabaster{{ name_suffix }}",
   "editorScheme": "/themes/alabaster{{ scheme_suffix }}.xml",
-  "colors": {
-    "background": "#{{ light ? "EEEEEE" : "2E2E2E" }}",
-  {% if bg %}
-    "primaryBackground": "#{{ light ? "FFFFFF" : "000000" }}",
-    "selection": "#{{ light ? "B4D8FD" : "293334" }}"
-  {% else %}
-    "primaryBackground": "#{{ light ? "F7F7F7" : "0E1415" }}",
-    "selection": "#{{ light ? "B4D8FD" : "293334" }}"
-  {% endif %}
-  },
   "ui": {
     "Islands": 1,
     "Island": {
@@ -35,21 +30,21 @@
       }
     },
     "*": {
-      "background":  "background",
-      "disabledBackground": "background",
-      "inactiveBackground": "background",
-      "selectionBackground": "selection"
+      "background":  "#{{ background }}",
+      "disabledBackground": "#{{ background }}",
+      "inactiveBackground": "#{{ background }}",
+      "selectionBackground": "#{{ selection }}"
     },
     "Editor": {
-      "background": "primaryBackground"
+      "background": "#{{ primaryBackground }}"
     },
     "FileColor": {
-      "Blue": "background",
-      "Green": "background",
-      "Orange": "background",
-      "Rose": "background",
-      "Violet": "background",
-      "Yellow": "background"
+      "Blue": "#{{ background }}",
+      "Green": "#{{ background }}",
+      "Orange": "#{{ background }}",
+      "Rose": "#{{ background }}",
+      "Violet": "#{{ background }}",
+      "Yellow": "#{{ background }}"
     }
   }
 }
