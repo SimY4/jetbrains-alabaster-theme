@@ -14,6 +14,7 @@
 
 ### Fixed
 - JS and Python decorators highlighting
+- Fixed closure braces boldness 
 
 ### Security
 

@@ -223,6 +223,7 @@
     <option name="Clojure Strings">
       <value />
     </option>
+    <option name="Closure braces" baseAttributes="Braces" />
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="DART_COLON">
       <value />
