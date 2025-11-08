@@ -444,11 +444,13 @@
     </option>
     <option name="DEFAULT_STRING">
       <value>
+{% block "string" %}
     {% if bg %}
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
     {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="DEFAULT_TAG">
@@ -568,26 +570,13 @@
     <option name="GHERKIN_TAG">
       <value />
     </option>
-    <option name="GO_BUILTIN_CONSTANT" baseAttributes="DEFAULT_CONSTANT"/>
-    <option name="GO_BUILTIN_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_BUILTIN_TYPE_REFERENCE" baseAttributes="DEFAULT_CLASS_REFERENCE"/>
-    <option name="GO_BUILTIN_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="GO_BUILTIN_TYPE">
       <value />
     </option>
-    <option name="GO_COMMENT_REFERENCE">
-      <value />
-    </option>
-    <option name="GO_EXPORTED_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_LOCAL_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_COMMENT_REFERENCE" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GO_LOCAL_CONSTANT">
       <value />
     </option>
     <option name="GO_PACKAGE">
-      <value />
-    </option>
-    <option name="GO_PACKAGE_LOCAL_CONSTANT">
       <value />
     </option>
     <option name="GO_SHADOWING_VARIABLE">
@@ -732,6 +721,11 @@
       {{ block("text") }}
       </value>
     </option>
+    <option name="Interpolated String Injection">
+      <value>
+      {{ block("text") }}
+      </value>
+    </option>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
       <value />
     </option>
@@ -765,11 +759,7 @@
     <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
     <option name="JSON.PROPERTY_KEY">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
@@ -1262,83 +1252,67 @@
     </option>
     <option name="REGEXP.BRACES">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.COMMA">
+      <value>
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.DOT">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.NAME">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.OPTIONS">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.QUANTIFIER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>

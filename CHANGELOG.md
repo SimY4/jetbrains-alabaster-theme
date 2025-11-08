@@ -14,11 +14,13 @@
 
 ### Fixed
 - JS and Python decorators highlighting
-- JS regex highlighting
 - Python predefined definitions highlighting
+- Fixed regex highlighting
+- Fixed interpolated strings highlighting in several languages
 - Fixed closure braces boldness
 - Fixed Kotlin properties highlighting
 - Fixed Kotlin colon highlighting
+- Fixed Go highlighting for calls vs declarations
 
 ### Security
 
