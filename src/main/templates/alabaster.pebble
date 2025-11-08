@@ -787,6 +787,11 @@
     <option name="KOTLIN_CLOSURE_DEFAULT_PARAMETER">
       <value />
     </option>
+    <option name="KOTLIN_COLON">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
     <option name="KOTLIN_CONSTRUCTOR">
       <value />
     </option>
