@@ -800,7 +800,11 @@
     {{ block("text") }}
       </value>
     </option>
-    <option name="KOTLIN_ENUM_ENTRY" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="KOTLIN_ENUM_ENTRY">
+      <value>
+    {{ block("text") }}
+      </value>
+    </option>
     <option name="KOTLIN_EXCLEXCL">
       <value />
     </option>
@@ -809,7 +813,13 @@
     {{ block("text") }}
       </value>
     </option>
+    <option name="KOTLIN_EXTENSION_PROPERTY">
+      <value />
+    </option>
     <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
+      <value />
+    </option>
+    <option name="KOTLIN_INSTANCE_PROPERTY">
       <value />
     </option>
     <option name="KOTLIN_LABEL" baseAttributes="DEFAULT_LABEL"/>
@@ -825,6 +835,9 @@
       <value>
     {{ block("text") }}
       </value>
+    </option>
+    <option name="KOTLIN_PACKAGE_PROPERTY">
+      <value />
     </option>
     <option name="KOTLIN_QUEST">
       <value />

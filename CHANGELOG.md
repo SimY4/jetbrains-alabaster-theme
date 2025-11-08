@@ -14,7 +14,8 @@
 
 ### Fixed
 - JS and Python decorators highlighting
-- Fixed closure braces boldness 
+- Fixed closure braces boldness
+- Fixed Kotlin properties highlighting
 
 ### Security
 
