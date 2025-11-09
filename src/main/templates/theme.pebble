@@ -38,6 +38,14 @@
     "Editor": {
       "background": "#{{ primaryBackground }}"
     },
+    "VersionControl": {
+      "Log": {
+        "Commit": {
+          "currentBranchBackground": "{{ primaryBackground }}",
+          "hoveredBackground": "{{ selection }}"
+        }
+      }
+    },
     "FileColor": {
       "Blue": "#{{ background }}",
       "Green": "#{{ background }}",

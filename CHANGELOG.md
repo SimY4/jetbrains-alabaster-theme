@@ -8,11 +8,20 @@
 
 ### Changed
 
+- VCS current branch commit highlighting is not blueish anymore.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+### Security
+
+## 0.2.6 - 2025-11-08
+
+### Fixed
+
 - JS and Python decorators highlighting
 - Python predefined definitions highlighting
 - Fixed regex highlighting
@@ -21,8 +30,6 @@
 - Fixed Kotlin properties highlighting
 - Fixed Kotlin colon highlighting
 - Fixed Go highlighting for calls vs declarations
-
-### Security
 
 ## 0.2.5 - 2025-11-08
 
