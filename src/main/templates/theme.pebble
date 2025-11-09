@@ -41,8 +41,8 @@
     "VersionControl": {
       "Log": {
         "Commit": {
-          "currentBranchBackground": "{{ primaryBackground }}",
-          "hoveredBackground": "{{ selection }}"
+          "currentBranchBackground": "#{{ primaryBackground }}",
+          "hoveredBackground": "#{{ selection }}"
         }
       }
     },
