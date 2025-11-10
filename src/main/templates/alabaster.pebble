@@ -260,7 +260,12 @@
     </option>
     <option name="DEBUGGER_INLINED_VALUES">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="999999" />
+      </value>
+    </option>
+    <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
+      <value>
+        <option name="FOREGROUND" value="999999" />
       </value>
     </option>
     <option name="DEFAULT_ATTRIBUTE">
@@ -530,7 +535,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="f0f0f0"/>
+        <option name="BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">

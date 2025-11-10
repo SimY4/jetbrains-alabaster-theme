@@ -8,15 +8,21 @@
 
 ### Changed
 
-- VCS current branch commit highlighting is not blueish anymore.
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
+- Fixed debugger colours once more.
+
 ### Security
+
+## 0.2.7 - 2025-11-10
+
+### Changed
+
+- VCS current branch commit highlighting is not blueish anymore.
 
 ## 0.2.6 - 2025-11-08
 
