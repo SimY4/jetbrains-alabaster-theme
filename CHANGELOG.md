@@ -14,9 +14,13 @@
 
 ### Fixed
 
-- Fixed debugger colours once more.
-
 ### Security
+
+## 0.2.8 - 2025-11-10
+
+### Fixed
+
+- Fixed debugger colours once more.
 
 ## 0.2.7 - 2025-11-10
 

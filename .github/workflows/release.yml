@@ -37,7 +37,7 @@ jobs:
           mkdir -p "$(dirname "$RELEASE_NOTE")"
           echo "$CHANGELOG" > $RELEASE_NOTE
 
-          ./gradlew patchChangelog --release-note-file=$RELEASE_NOTE
+          ./gradlew patchChangelog -PpluginVersion="${{ github.event.release.tag_name }}" --release-note-file=$RELEASE_NOTE
 
       - name: 🚀 Publish Plugin
         env:
