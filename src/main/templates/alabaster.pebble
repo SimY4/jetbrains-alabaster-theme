@@ -108,7 +108,15 @@
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+{% block "text" %}
+    {% if light %}
+        <option name="FOREGROUND" value="00000" />
+        <option name="BACKGROUND" value="{{ bg ? "FFFFFF" : "F7F7F7" }}" />
+    {% else %}
+        <option name="FOREGROUND" value="CECECE" />
+        <option name="BACKGROUND" value="1E1E1E" />
+    {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
@@ -178,7 +186,7 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="FOREGROUND" value="{{ text }}"/>
+    {{ block("text") }}
         <option name="EFFECT_COLOR" value="{{ text }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
@@ -215,6 +223,7 @@
     <option name="Clojure Strings">
       <value />
     </option>
+    <option name="Closure braces" baseAttributes="Braces" />
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="DART_COLON">
       <value />
@@ -251,12 +260,17 @@
     </option>
     <option name="DEBUGGER_INLINED_VALUES">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="999999" />
+      </value>
+    </option>
+    <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
+      <value>
+        <option name="FOREGROUND" value="999999" />
       </value>
     </option>
     <option name="DEFAULT_ATTRIBUTE">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
@@ -273,22 +287,22 @@
     </option>
     <option name="DEFAULT_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_COMMA">
@@ -336,7 +350,7 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -435,11 +449,13 @@
     </option>
     <option name="DEFAULT_STRING">
       <value>
+{% block "string" %}
     {% if bg %}
         <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
     {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="DEFAULT_TAG">
@@ -519,7 +535,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="f0f0f0"/>
+        <option name="BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
@@ -559,26 +575,13 @@
     <option name="GHERKIN_TAG">
       <value />
     </option>
-    <option name="GO_BUILTIN_CONSTANT" baseAttributes="DEFAULT_CONSTANT"/>
-    <option name="GO_BUILTIN_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_BUILTIN_TYPE_REFERENCE" baseAttributes="DEFAULT_CLASS_REFERENCE"/>
-    <option name="GO_BUILTIN_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="GO_BUILTIN_TYPE">
       <value />
     </option>
-    <option name="GO_COMMENT_REFERENCE">
-      <value />
-    </option>
-    <option name="GO_EXPORTED_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_LOCAL_FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
-    <option name="GO_COMMENT_REFERENCE" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="GO_LOCAL_CONSTANT">
       <value />
     </option>
     <option name="GO_PACKAGE">
-      <value />
-    </option>
-    <option name="GO_PACKAGE_LOCAL_CONSTANT">
       <value />
     </option>
     <option name="GO_SHADOWING_VARIABLE">
@@ -623,7 +626,7 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -632,7 +635,7 @@
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="HTML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
@@ -720,7 +723,12 @@
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
+      </value>
+    </option>
+    <option name="Interpolated String Injection">
+      <value>
+      {{ block("text") }}
       </value>
     </option>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
@@ -748,23 +756,15 @@
       <value />
     </option>
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
-    <option name="JS.DECORATOR">
-      <value />
-    </option>
+    <option name="JS.DECORATOR" baseAttributes="DEFAULT_METADATA"/>
     <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
     <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
     <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
-    <option name="JS.REGEXP">
-      <value />
-    </option>
+    <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
     <option name="JSON.PROPERTY_KEY">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="JSP_DIRECTIVE_NAME">
@@ -780,29 +780,44 @@
     <option name="KOTLIN_CLOSURE_DEFAULT_PARAMETER">
       <value />
     </option>
+    <option name="KOTLIN_COLON">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
     <option name="KOTLIN_CONSTRUCTOR">
       <value />
     </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="KOTLIN_DYNAMIC_PROPERTY_CALL">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
-    <option name="KOTLIN_ENUM_ENTRY" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="KOTLIN_ENUM_ENTRY">
+      <value>
+    {{ block("text") }}
+      </value>
+    </option>
     <option name="KOTLIN_EXCLEXCL">
       <value />
     </option>
     <option name="KOTLIN_EXTENSION_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
+    <option name="KOTLIN_EXTENSION_PROPERTY">
+      <value />
+    </option>
     <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
+      <value />
+    </option>
+    <option name="KOTLIN_INSTANCE_PROPERTY">
       <value />
     </option>
     <option name="KOTLIN_LABEL" baseAttributes="DEFAULT_LABEL"/>
@@ -811,13 +826,16 @@
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
       <value>
-    {{ block("comment") }}
+    {{ block("text") }}
       </value>
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
+    </option>
+    <option name="KOTLIN_PACKAGE_PROPERTY">
+      <value />
     </option>
     <option name="KOTLIN_QUEST">
       <value />
@@ -1195,9 +1213,7 @@
     <option name="PY.ANNOTATION">
       <value />
     </option>
-    <option name="PY.DECORATOR">
-      <value />
-    </option>
+    <option name="PY.DECORATOR" baseAttributes="DEFAULT_METADATA"/>
     <option name="PY.BUILTIN_NAME">
       <value />
     </option>
@@ -1206,10 +1222,14 @@
       <value />
     </option>
     <option name="PY.PREDEFINED_DEFINITION">
-      <value />
+      <value>
+    {{ block("declaration") }}
+      </value>
     </option>
     <option name="PY.PREDEFINED_USAGE">
-      <value />
+      <value>
+    {{ block("text") }}
+      </value>
     </option>
     <option name="PY.SELF_PARAMETER">
       <value />
@@ -1237,83 +1257,67 @@
     </option>
     <option name="REGEXP.BRACES">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.BRACKETS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.CHAR_CLASS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.COMMA">
+      <value>
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.DOT">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.ESC_CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.NAME">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.META">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="REGEXP.OPTIONS">
+      <value>
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.PARENTHS">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.QUANTIFIER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.QUOTE_CHARACTER">
       <value>
-    {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
-    {% endif %}
+    {{ block("string") }}
       </value>
     </option>
     <option name="REGEXP.REDUNDANT_ESCAPE" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
@@ -1495,22 +1499,22 @@
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
       </value>
     </option>
     <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
       </value>
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
       </value>
     </option>
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
       </value>
     </option>
     <option name="STYLUS_VARIABLE">
@@ -1535,7 +1539,7 @@
     </option>
     <option name="Scala Object method call">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="Scala Predefined types">
@@ -1564,7 +1568,7 @@
     </option>
     <option name="TEXT">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+    {{ block("text") }}
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
@@ -1645,7 +1649,7 @@
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+      {{ block("text") }}
       </value>
     </option>
     <option name="XPATH.FUNCTION">

@@ -16,7 +16,40 @@
 
 ### Fixed
 
+- Fixed Kotlin named arguments highlighting
+
 ### Security
+
+## 0.2.8 - 2025-11-10
+
+### Fixed
+
+- Fixed debugger colours once more.
+
+## 0.2.7 - 2025-11-10
+
+### Changed
+
+- VCS current branch commit highlighting is not blueish anymore.
+
+## 0.2.6 - 2025-11-08
+
+### Fixed
+
+- JS and Python decorators highlighting
+- Python predefined definitions highlighting
+- Fixed regex highlighting
+- Fixed interpolated strings highlighting in several languages
+- Fixed closure braces boldness
+- Fixed Kotlin properties highlighting
+- Fixed Kotlin colon highlighting
+- Fixed Go highlighting for calls vs declarations
+
+## 0.2.5 - 2025-11-08
+
+### Fixed
+
+- Editor background colors not having an effect
 
 ## 0.2.4 - 2025-11-08
 
