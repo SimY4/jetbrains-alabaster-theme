@@ -14,6 +14,8 @@
 
 ### Fixed
 
+- Fixed Kotlin named arguments highlighting
+
 ### Security
 
 ## 0.2.8 - 2025-11-10

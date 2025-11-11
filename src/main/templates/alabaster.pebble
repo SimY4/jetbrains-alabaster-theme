@@ -826,7 +826,7 @@
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
       <value>
-    {{ block("comment") }}
+    {{ block("text") }}
       </value>
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL">
