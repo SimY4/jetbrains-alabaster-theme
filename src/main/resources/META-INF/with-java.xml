@@ -1,0 +1,5 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator implementationClass="com.github.simy4.alabaster.JavaAnnotator"/>
+    </extensions>
+</idea-plugin>

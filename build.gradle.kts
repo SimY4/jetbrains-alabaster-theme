@@ -34,6 +34,14 @@ repositories {
 dependencies {
   intellijPlatform {
     create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
+    bundledPlugins("org.jetbrains.kotlin", "com.intellij.java")
+    plugins(
+      "com.cursiveclojure.cursive:2025.2-252",
+      "JavaScript:252.27397.106",
+      "org.intellij.scala:2025.2.30",
+      "org.jetbrains.plugins.go:252.26830.24",
+      "PsiViewer:252.23892.248"
+    )
   }
 }
 
