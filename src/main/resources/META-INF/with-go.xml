@@ -1,0 +1,5 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="go" implementationClass="com.github.simy4.alabaster.GoAnnotator"/>
+    </extensions>
+</idea-plugin>
