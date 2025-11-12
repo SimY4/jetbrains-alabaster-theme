@@ -1,5 +1,5 @@
 <idea-plugin>
     <extensions defaultExtensionNs="com.intellij">
-        <annotator implementationClass="com.github.simy4.alabaster.PythonAnnotator"/>
+        <annotator language="Python" implementationClass="com.github.simy4.alabaster.PythonAnnotator"/>
     </extensions>
 </idea-plugin>

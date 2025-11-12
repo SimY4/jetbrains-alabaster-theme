@@ -1,6 +1,6 @@
 <idea-plugin>
     <extensions defaultExtensionNs="com.intellij">
-        <annotator implementationClass="com.github.simy4.alabaster.KotlinAnnotator"/>
+        <annotator language="kotlin" implementationClass="com.github.simy4.alabaster.KotlinAnnotator"/>
     </extensions>
 
     <extensions defaultExtensionNs="org.jetbrains.kotlin">
