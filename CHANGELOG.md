@@ -6,8 +6,6 @@
 
 ### Added
 
-- New `true`, `false` and `null` keywords annotator
-
 ### Changed
 
 ### Deprecated
@@ -16,9 +14,15 @@
 
 ### Fixed
 
-- Fixed Kotlin named arguments highlighting
-
 ### Security
+
+## 0.3.0 - 2025-11-12
+
+Second attempt to highlight `true`, `false` and `null` keywords, feedback and bug reports on this are always welcome.
+
+Additionally:
+
+- fixed Kotlin named arguments highlighting
 
 ## 0.2.8 - 2025-11-10
 
