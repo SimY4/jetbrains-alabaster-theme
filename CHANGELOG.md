@@ -16,6 +16,12 @@
 
 ### Security
 
+## 0.3.1 - 2025-11-12
+
+A quick follow up addressing missing language attribute on annotator configurations.
+
+And two new additional annotators for Python and Go.
+
 ## 0.3.0 - 2025-11-12
 
 Third attempt to add annotator to `true`, `false` and `null` keywords. Java, JavaScript, Kotlin and Scala made it into first cut. As always, feedback and bug reports are welcome.
