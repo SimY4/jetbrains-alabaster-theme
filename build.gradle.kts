@@ -40,7 +40,8 @@ dependencies {
       "JavaScript:252.27397.106",
       "org.intellij.scala:2025.2.30",
       "org.jetbrains.plugins.go:252.26830.24",
-      "PsiViewer:252.23892.248"
+      "PsiViewer:252.23892.248",
+      "PythonCore:252.27397.103"
     )
   }
 }
