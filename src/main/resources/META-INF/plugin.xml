@@ -28,7 +28,7 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
 ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
-    <depends optional="true" config-file="with-go.xml">com.intellij.plugins.go</depends>
+    <depends optional="true" config-file="with-go.xml">org.jetbrains.plugins.go</depends>
     <depends optional="true" config-file="with-java.xml">com.intellij.java</depends>
     <depends optional="true" config-file="with-javascript.xml">JavaScript</depends>
     <depends optional="true" config-file="with-kotlin.xml">org.jetbrains.kotlin</depends>
