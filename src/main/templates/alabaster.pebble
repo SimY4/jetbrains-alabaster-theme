@@ -109,15 +109,7 @@
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
       <value>
-{% block "text" %}
-    {% if light %}
-        <option name="FOREGROUND" value="00000" />
-        <option name="BACKGROUND" value="{{ bg ? "FFFFFF" : "F7F7F7" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="CECECE" />
-        <option name="BACKGROUND" value="1E1E1E" />
-    {% endif %}
-{% endblock %}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
@@ -187,7 +179,7 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
         <option name="EFFECT_COLOR" value="{{ text }}"/>
         <option name="EFFECT_TYPE" value="1"/>
       </value>
@@ -271,7 +263,7 @@
     </option>
     <option name="DEFAULT_ATTRIBUTE">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
@@ -288,22 +280,22 @@
     </option>
     <option name="DEFAULT_BRACES">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_BRACKETS">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_COMMA">
@@ -350,7 +342,7 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -626,7 +618,7 @@
     <option name="HAML_XHTML" baseAttributes=""/>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
@@ -635,7 +627,7 @@
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG"/>
     <option name="HTML_TAG_NAME">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
@@ -725,12 +717,12 @@
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="Interpolated String Injection">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
@@ -792,17 +784,17 @@
     </option>
     <option name="KOTLIN_DYNAMIC_FUNCTION_CALL">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_DYNAMIC_PROPERTY_CALL">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_ENUM_ENTRY">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_EXCLEXCL">
@@ -810,7 +802,7 @@
     </option>
     <option name="KOTLIN_EXTENSION_FUNCTION_CALL">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_EXTENSION_PROPERTY">
@@ -828,12 +820,12 @@
     </option>
     <option name="KOTLIN_NAMED_ARGUMENT">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_PACKAGE_FUNCTION_CALL">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="KOTLIN_PACKAGE_PROPERTY">
@@ -1235,7 +1227,7 @@
     </option>
     <option name="PY.PREDEFINED_USAGE">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="PY.SELF_PARAMETER">
@@ -1506,22 +1498,22 @@
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="STYLUS_VARIABLE">
@@ -1546,7 +1538,7 @@
     </option>
     <option name="Scala Object method call">
       <value>
-    {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="Scala Predefined types">
@@ -1575,7 +1567,13 @@
     </option>
     <option name="TEXT">
       <value>
-    {{ block("text") }}
+    {% if light %}
+        <option name="FOREGROUND" value="00000" />
+        <option name="BACKGROUND" value="{{ bg ? "FFFFFF" : "F7F7F7" }}" />
+    {% else %}
+        <option name="FOREGROUND" value="CECECE" />
+        <option name="BACKGROUND" value="1E1E1E" />
+    {% endif %}
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
@@ -1656,7 +1654,7 @@
     <option name="XML_TAG_DATA" baseAttributes="TEXT"/>
     <option name="XML_TAG_NAME">
       <value>
-      {{ block("text") }}
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="XPATH.FUNCTION">
