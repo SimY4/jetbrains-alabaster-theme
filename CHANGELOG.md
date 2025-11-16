@@ -16,6 +16,14 @@
 
 ### Security
 
+## 0.3.2 - 2025-11-16
+
+This release adds highlighting for deprecated and unused chunks of code.
+
+Fixes the background ordering issue causing text to appear with different unmatched backgrounds.
+
+And fixes and issue with Go annotator was not being property registered.
+
 ## 0.3.1 - 2025-11-12
 
 A quick follow up addressing missing language attribute on annotator configurations.
