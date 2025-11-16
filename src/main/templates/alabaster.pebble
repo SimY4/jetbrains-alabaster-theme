@@ -7,6 +7,7 @@
 {# ----- #}
 {% set text = light ? "00000" : "cecece" %}
 {% set punctuation = light ? "777" : "708B8D" %}
+{% set metadata = "999999" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
   <metaInfo>
@@ -260,12 +261,12 @@
     </option>
     <option name="DEBUGGER_INLINED_VALUES">
       <value>
-        <option name="FOREGROUND" value="999999" />
+        <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
     <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
       <value>
-        <option name="FOREGROUND" value="999999" />
+        <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
     <option name="DEFAULT_ATTRIBUTE">
@@ -327,7 +328,6 @@
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
     {% endif %}
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
@@ -403,8 +403,7 @@
     </option>
     <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="999999" />
-        <option name="EFFECT_TYPE" value="1" />
+        <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
     <option name="DEFAULT_NUMBER">
@@ -427,9 +426,7 @@
       <value />
     </option>
     <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE">
-      <value>
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
+      <value />
     </option>
     <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER"/>
     <option name="DEFAULT_SEMICOLON">
@@ -480,7 +477,10 @@
       <value />
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_TYPE" value="2" />
+      </value>
     </option>
     <option name="DJANGO_STRING_LITERAL">
       <value />
@@ -716,6 +716,8 @@
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
     {{ block("comment") }}
+        <option name="EFFECT_COLOR" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="INLINE_STACK_FRAMES">
@@ -1041,7 +1043,10 @@
       <value />
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_TYPE" value="3" />
+      </value>
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
@@ -1075,7 +1080,9 @@
       <value />
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ metadata }}" />
+      </value>
     </option>
     <option name="OC.CLASS_REFERENCE">
       <value />
