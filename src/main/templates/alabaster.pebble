@@ -1073,7 +1073,8 @@
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
+        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="OC.CLASS_REFERENCE">
