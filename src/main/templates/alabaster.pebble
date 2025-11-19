@@ -419,7 +419,9 @@
       <value />
     </option>
     <option name="DEFAULT_PARENTHS">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_PREDEFINED_SYMBOL">
       <value />
