@@ -16,6 +16,16 @@
 
 ### Security
 
+## 0.3.3 - 2025-11-19
+
+This release is mainly focuses on improving string and regex highlighting in regards to valid and invalid escape sequences. Highlighting behavior should now follow the original theme more closely.
+
+And also brings a few fixes:
+
+- Change highlighting of unused to be similar to deprecated highlighting not to mix it with metadata highlighting.
+- JavaScript fields are no longer highlighted.
+- Fixed XML attribute highlighting in BG
+
 ## 0.3.2 - 2025-11-16
 
 This release adds highlighting for deprecated and unused chunks of code.
