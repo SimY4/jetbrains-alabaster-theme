@@ -7,3 +7,5 @@
 Alabaster theme for Jetbrains inspired by [tonsky's](https://github.com/tonsky) alabaster for Sublime Text
 
 ![sample](https://github.com/SimY4/jetbrains-alabaster-theme/blob/main/alabaster.png)
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="SimY4" data-color="#FFDD00" data-emoji="" data-font="Inter" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
