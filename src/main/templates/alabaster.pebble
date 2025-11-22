@@ -19,11 +19,11 @@
   <colors>
     <option name="CARET_COLOR" value="{{ light ? "007ACC" : "CD974B" }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{{ light ? "f7f7f7" : "1e1e1e" }}"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{ light ? "f7f7f7" : "0E1415" }}"/>
     <option name="DOC_COMMENT_LINK" value="{{ bg ? "695900" : (light ? "aa3731" : "ffc66e") }}"/>
-    <option name="GUTTER_BACKGROUND" value="{{ light ? "f7f7f7" : "1e1e1e" }}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ light ? "f7f7f7" : "0E1415" }}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
-    <option name="READONLY_BACKGROUND" value="{{ light ? "f7f7f7" : "1e1e1e" }}" />
+    <option name="READONLY_BACKGROUND" value="{{ light ? "f7f7f7" : "0E1415" }}" />
     <option name="SELECTION_BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
@@ -1591,12 +1591,11 @@
     </option>
     <option name="TEXT">
       <value>
+        <option name="FOREGROUND" value="{{ text }}" />
     {% if light %}
-        <option name="FOREGROUND" value="00000" />
         <option name="BACKGROUND" value="{{ bg ? "FFFFFF" : "F7F7F7" }}" />
     {% else %}
-        <option name="FOREGROUND" value="CECECE" />
-        <option name="BACKGROUND" value="1E1E1E" />
+        <option name="BACKGROUND" value="0E1415" />
     {% endif %}
       </value>
     </option>

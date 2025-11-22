@@ -6,8 +6,10 @@
 {% set scheme_suffix = (light ? "" : "-dark") ~ (bg ? "-bg" : "") %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
-{% set primaryBackground = bg ? (light ? "FFFFFF" : "1E1E1E") : (light ? "F7F7F7" : "1E1E1E") %}
-{% set selection = light ? "B4D8FD" : "293334"  %}
+{% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
+{% set primaryBackground = bg ? (light ? "FFFFFF" : "0E1415") : (light ? "F7F7F7" : "0E1415") %}
+{% set selectionBackground = light ? "F7F7F7" : "565B5C"  %}
+{% set selectionForeground = light ? "000000" : "FFFFFF"  %}
 {# ----- #}
 {
   "author": "Alex Simkin",
@@ -32,8 +34,12 @@
     "*": {
       "background":  "#{{ background }}",
       "disabledBackground": "#{{ background }}",
+      "hoveredBackground": "#{{ hoveredBackground }}",
       "inactiveBackground": "#{{ background }}",
-      "selectionBackground": "#{{ selection }}"
+      "selectionBackground": "#{{ selectionBackground }}",
+      "selectionInactiveBackground": "#{{ selectionBackground }}",
+      "selectionForeground": "#{{ selectionForeground }}",
+      "selectionInactiveForeground": "#{{ selectionForeground }}"
     },
     "Editor": {
       "background": "#{{ primaryBackground }}"
@@ -41,8 +47,7 @@
     "VersionControl": {
       "Log": {
         "Commit": {
-          "currentBranchBackground": "#{{ primaryBackground }}",
-          "hoveredBackground": "#{{ selection }}"
+          "currentBranchBackground": "#{{ primaryBackground }}"
         }
       }
     },
