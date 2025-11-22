@@ -37,6 +37,7 @@ dependencies {
     bundledPlugins("org.jetbrains.kotlin", "com.intellij.java")
     plugins(
       "com.cursiveclojure.cursive:2025.2-252",
+      "com.jetbrains.rust:252.27397.133",
       "JavaScript:252.27397.106",
       "org.intellij.scala:2025.2.30",
       "org.jetbrains.plugins.go:252.26830.24",

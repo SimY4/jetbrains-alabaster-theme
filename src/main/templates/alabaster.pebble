@@ -1729,18 +1729,29 @@
       <value />
     </option>
     <option name="org.rust.ASSOC_FUNCTION" baseAttributes="DEFAULT_STATIC_METHOD" />
-    <option name="org.rust.ASSOC_FUNCTION_CALL" baseAttributes="DEFAULT_STATIC_METHOD" />
+    <option name="org.rust.ASSOC_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="org.rust.ASSOC_TRAIT_FUNCTION" baseAttributes="org.rust.ASSOC_FUNCTION" />
     <option name="org.rust.ASSOC_TRAIT_FUNCTION_CALL" baseAttributes="org.rust.ASSOC_FUNCTION_CALL" />
     <option name="org.rust.CFG_DISABLED_CODE">
       <value />
+    </option>
+    <option name="org.rust.CLOSURE">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="org.rust.CRATE" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="org.rust.DOC_LINK">
       <value />
     </option>
     <option name="org.rust.ENUM" baseAttributes="DEFAULT_CLASS_NAME" />
-    <option name="org.rust.ENUM_VARIANT" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="org.rust.ENUM_VARIANT">
+      <value />
+    </option>
     <option name="org.rust.FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
     <option name="org.rust.FUNCTION_CALL" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="org.rust.LIFETIME">
@@ -1752,11 +1763,20 @@
     <option name="org.rust.MACRO_BINDING_IDENTIFIER">
       <value />
     </option>
+    <option name="org.rust.MACRO_COLON">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
     <option name="org.rust.MACRO_DOLLAR">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="org.rust.MACRO_EXCL">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="org.rust.MACRO_IDENTIFIER">
       <value />
@@ -1775,8 +1795,15 @@
       <value />
     </option>
     <option name="org.rust.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="org.rust.OVERLOADED_OPERATOR">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
     <option name="org.rust.Q_OPERATOR">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="org.rust.SELF_EXPRESSION">
       <value />

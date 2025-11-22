@@ -14,9 +14,13 @@ A light & dark color schemes with minimal amount of highlighting for IntelliJ ID
 
 <ul>
   <li>Clojure</li>
+  <li>Go</li>
   <li>Java</li>
+  <li>JavaScript / TypeScript</li>
   <li>Kotlin</li>
+  <li>Python</li>
   <li>Rust</li>
+  <li>Scala</li>
 </ul>
 
 <p>
@@ -33,6 +37,7 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
     <depends optional="true" config-file="with-javascript.xml">JavaScript</depends>
     <depends optional="true" config-file="with-kotlin.xml">org.jetbrains.kotlin</depends>
     <depends optional="true" config-file="with-python.xml">PythonCore</depends>
+    <depends optional="true" config-file="with-rust.xml">com.jetbrains.rust</depends>
     <depends optional="true" config-file="with-scala.xml">org.intellij.scala</depends>
 
     <extensions defaultExtensionNs="com.intellij">
