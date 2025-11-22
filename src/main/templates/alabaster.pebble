@@ -5,8 +5,9 @@
 {% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
-{% set text = light ? "00000" : "cecece" %}
+{% set constant = light ? "7a3e9d" : "9876aa" %}
 {% set punctuation = light ? "777" : "708B8D" %}
+{% set text = light ? "00000" : "cecece" %}
 {% set metadata = "999999" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
@@ -305,7 +306,7 @@
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
@@ -376,10 +377,10 @@
       <value>
 {% block "escape" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
         <option name="BACKGROUND" value="{{ light ? "DBECB6" : "95CB82" }}" />
     {% else %}
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
     {% endif %}
 {% endblock %}
         <option name="EFFECT_COLOR" value="ff0000" />
@@ -409,7 +410,7 @@
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "7a3e9d" : "9876aa" }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
       </value>
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
@@ -509,7 +510,9 @@
       <value />
     </option>
     <option name="ENUM_CONST">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
     </option>
     <option name="ERL_ATOM" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="ERL_MACRO" baseAttributes="DEFAULT_STATIC_FIELD"/>
@@ -806,7 +809,7 @@
     </option>
     <option name="KOTLIN_ENUM_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
       </value>
     </option>
     <option name="KOTLIN_EXCLEXCL">
