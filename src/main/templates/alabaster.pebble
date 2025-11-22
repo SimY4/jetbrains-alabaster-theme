@@ -338,7 +338,9 @@
       </value>
     </option>
     <option name="DEFAULT_ENTITY">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
