@@ -6,9 +6,10 @@
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
 {% set constant = light ? "7a3e9d" : "9876aa" %}
-{% set punctuation = light ? "777" : "708B8D" %}
-{% set text = light ? "00000" : "cecece" %}
 {% set metadata = "999999" %}
+{% set punctuation = light ? "777" : "708B8D" %}
+{% set search = light ? "FFBC5D" : "CD974B" %}
+{% set text = light ? "00000" : "cecece" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
   <metaInfo>
@@ -1057,7 +1058,7 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ text }}" />
+        <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -1433,7 +1434,7 @@
     <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD"/>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ text }}" />
+        <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
@@ -1601,7 +1602,7 @@
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ text }}" />
+        <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
@@ -1662,7 +1663,7 @@
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ text }}" />
+        <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="0" />
       </value>
     </option>
