@@ -16,6 +16,15 @@
 
 ### Security
 
+## 0.3.4 - 2025-11-22
+
+This release is focusing on improving search and editor interfaces highlighting.
+
+And a few other changes:
+
+- Added unmatched braces highlighting
+- Highlight enum constants
+
 ## 0.3.3 - 2025-11-19
 
 This release is mainly focuses on improving string and regex highlighting in regards to valid and invalid escape sequences. Highlighting behavior should now follow the original theme more closely.
