@@ -202,23 +202,18 @@
     <option name="Clojure Atom">
       <value />
     </option>
-    <option name="Clojure Character">
-      <value />
-    </option>
+    <option name="Clojure Character" baseAttributes="DEFAULT_STRING" />
     <option name="Clojure Keyword">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
     </option>
     <option name="Clojure Line comment" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="Clojure Literal">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
     </option>
-    <option name="Clojure Numbers">
-      <value />
-    </option>
-    <option name="Clojure Strings">
-      <value />
-    </option>
-    <option name="Closure braces" baseAttributes="Braces" />
     <option name="ComposableCallTextAttributes" baseAttributes="DEFAULT_FUNCTION_CALL"/>
     <option name="DART_COLON">
       <value />
@@ -627,6 +622,11 @@
       <value />
     </option>
     <option name="HAML_XHTML" baseAttributes=""/>
+    <option name="Head symbol">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
