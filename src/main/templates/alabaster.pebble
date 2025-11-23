@@ -1537,7 +1537,7 @@
     </option>
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ constant }}" />
       </value>
     </option>
     <option name="STYLUS_VARIABLE">
