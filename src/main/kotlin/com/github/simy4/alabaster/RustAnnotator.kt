@@ -5,15 +5,16 @@ import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.psi.PsiElement
+import com.intellij.psi.util.elementType
 import org.rust.lang.core.psi.RsElementTypes
 
 class RustAnnotator: Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
-    val elementType = element.node.elementType
+    val elementType = element.elementType
     if (RsElementTypes.TRUE == elementType
       || RsElementTypes.FALSE == elementType
       || RsElementTypes.BOOL_LITERAL == elementType) {
-      holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+      holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
         .textAttributes(DefaultLanguageHighlighterColors.NUMBER)
         .create()
     }

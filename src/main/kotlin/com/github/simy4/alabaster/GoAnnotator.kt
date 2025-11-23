@@ -6,12 +6,13 @@ import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.psi.PsiElement
+import com.intellij.psi.util.elementType
 
 class GoAnnotator: Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
-    val elementType = element.node.elementType
+    val elementType = element.elementType
     if ((GoTypes.IDENTIFIER == elementType && "nil" == element.text)) {
-      holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+      holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
         .textAttributes(DefaultLanguageHighlighterColors.NUMBER)
         .create()
     }

@@ -32,6 +32,7 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
 ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="with-clojure.xml">com.cursiveclojure.cursive</depends>
     <depends optional="true" config-file="with-go.xml">org.jetbrains.plugins.go</depends>
     <depends optional="true" config-file="with-java.xml">com.intellij.java</depends>
     <depends optional="true" config-file="with-javascript.xml">JavaScript</depends>
