@@ -16,6 +16,16 @@
 
 ### Security
 
+## 0.3.5 - 2025-11-23
+
+This release adds Rust and Clojure annotators to help with highlighting. Both Rust and Clojure received an uplift with many adjustments to actualize their highlighting.
+
+Other changes in this release:
+
+- Reverted changes to selection background to fix the regression in code completion selection visibility.
+- Project search colors now match in-file search colors
+- Static final fields are not highlighted as constants.
+
 ## 0.3.4 - 2025-11-22
 
 This release is focusing on improving search and editor interfaces highlighting.
