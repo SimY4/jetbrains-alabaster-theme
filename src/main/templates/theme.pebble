@@ -45,6 +45,10 @@
     "Editor": {
       "background": "#{{ primaryBackground }}"
     },
+    "SearchMatch": {
+      "endBackground": "#{{ searchMatchBackground }}",
+      "startBackground": "#{{ searchMatchBackground }}"
+    },
     "VersionControl": {
       "Log": {
         "Commit": {
