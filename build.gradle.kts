@@ -33,7 +33,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
+    intellijIdea(providers.gradleProperty("platformVersion"))
     bundledPlugins("org.jetbrains.kotlin", "com.intellij.java")
     plugins(
       "com.cursiveclojure.cursive:2025.2-252",
@@ -68,9 +68,6 @@ intellijPlatform {
 
   publishing {
     token = providers.environmentVariable("PUBLISH_TOKEN")
-    // The pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
-    // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:
-    // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
     channels = providers.gradleProperty("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
   }
 
