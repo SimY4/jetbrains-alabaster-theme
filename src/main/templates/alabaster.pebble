@@ -1559,11 +1559,7 @@
     <option name="SWIFT_SHEBANG_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
     <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
-    <option name="Scala Named Argument">
-      <value>
-    {{ block("comment") }}
-      </value>
-    </option>
+    <option name="Scala Named Argument" baseAttributes="Scala Parameter"/>
     <option name="Scala Object method call">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
