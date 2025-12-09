@@ -16,6 +16,15 @@
 
 ### Security
 
+## 0.3.6 - 2025-12-09
+
+Minor changes in this release:
+
+- Tone down JavaScript member functions highlighting.
+- Scala named parameters highlighting fixes.
+- Updated to latest intellij-platform-plugin-template
+- Updated to pebble 4.0.0
+
 ## 0.3.5 - 2025-11-23
 
 This release adds Rust and Clojure annotators to help with highlighting. Both Rust and Clojure received an uplift with many adjustments to actualize their highlighting.
