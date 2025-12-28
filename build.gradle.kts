@@ -93,8 +93,7 @@ tasks.register("generate") {
   notCompatibleWithConfigurationCache("Pebble classes are not serializable")
 
   doLast {
-    val engine = PebbleEngine.Builder().loader(FileLoader().apply {
-      prefix = "src/main/templates/"
+    val engine = PebbleEngine.Builder().loader(FileLoader(file("src/main/templates/").absolutePath).apply {
       suffix = ".pebble"
     }).build()
     val themeTemplate = engine.getTemplate("theme")
@@ -129,6 +128,10 @@ tasks.register("generate") {
 }
 
 tasks {
+  clean {
+    delete("src/main/resources/themes")
+  }
+
   // Set the JVM compatibility versions
   providers.gradleProperty("javaVersion").get().let {
     withType<JavaCompile> {
