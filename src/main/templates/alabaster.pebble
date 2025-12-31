@@ -269,7 +269,7 @@
 {% block "comment" %}
     {% if bg %}
         <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "ffc66e" }}" />
+        <option name="BACKGROUND" value="{{ light ? "fffabc" : "99999922" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
     {% endif %}
@@ -385,7 +385,9 @@
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="DEFAULT_LABEL">
       <value>
@@ -695,7 +697,13 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-    {{ block("comment") }}
+    {% if bg %}
+        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="BACKGROUND" value="{{ light ? "fffabc" : "99999922" }}" />
+    {% else %}
+        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
+        <option name="BACKGROUND" value="99999922" />
+    {% endif %}
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
