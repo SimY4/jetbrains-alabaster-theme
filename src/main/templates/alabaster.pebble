@@ -1558,6 +1558,11 @@
       <value />
     </option>
     <option name="SWIFT_SHEBANG_COMMENT" baseAttributes="DEFAULT_LINE_COMMENT"/>
+    <option name="Scala Enum Singleton Case">
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
+    </option>
     <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Mutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
     <option name="Scala Named Argument" baseAttributes="Scala Parameter"/>
