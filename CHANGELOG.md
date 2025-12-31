@@ -16,6 +16,14 @@
 
 ### Security
 
+## 0.3.7 - 2025-12-31
+
+Minor changes in this release:
+
+- De-bald brackets around groovy closures.
+- Scala enum singleton values highlighted as constants.
+- Inlay hints in a non-BG theme now has a slight background accent to help with highlighting Kotlin's generated code.
+
 ## 0.3.6 - 2025-12-09
 
 Minor changes in this release:
