@@ -13,29 +13,35 @@ import cursive.psi.api.ClListLike
 class ClojureAnnotator: Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
     val elementType = element.elementType
-    if (ClojureTokenTypes.SYMBOL_TOKEN == elementType) {
-      (element.parent.parent as? ClListLike)
-        ?.takeIf { it.type == ClojurePsiElement.LIST }
-        ?.let { list ->
-          val head = list.headText
-          when (head) {
-            "def"
-              , "defn"
-              , "defn-"
-              , "defmulti"
-              , "defmethod"
-              , "defmacro"
-              , "deftest"
-              , "definterface"
-              , "defprotocol"
-              , "deftype" ->
-                if (element.text !== head) {
-                  holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-                    .textAttributes(DefaultLanguageHighlighterColors.FUNCTION_DECLARATION)
-                    .create()
-                }
+    when (elementType) {
+      ClojureTokenTypes.SYMBOL_TOKEN ->
+        (element.parent.parent as? ClListLike)
+          ?.takeIf { it.type == ClojurePsiElement.LIST }
+          ?.let { list ->
+            when (val head = list.headText) {
+              "def"
+                , "defn"
+                , "defn-"
+                , "defmulti"
+                , "defmethod"
+                , "defmacro"
+                , "deftest"
+                , "definterface"
+                , "defprotocol"
+                , "deftype" ->
+                  if (element.text !== head) {
+                    holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
+                      .textAttributes(DefaultLanguageHighlighterColors.FUNCTION_DECLARATION)
+                      .create()
+                  }
+            }
           }
-      }
+      ClojureTokenTypes.SEXP_COMMENT ->
+        if (element.firstChild.elementType === ClojureTokenTypes.UNEVAL) {
+          holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
+            .textAttributes(DefaultLanguageHighlighterColors.METADATA)
+            .create()
+        }
     }
   }
 }
