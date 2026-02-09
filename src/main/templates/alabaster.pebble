@@ -5,7 +5,7 @@
 {% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
-{% set constant = light ? "7a3e9d" : "9876aa" %}
+{% set constant = light ? "8a3eb5" : "CC8BC9" %}
 {% set metadata = "999999" %}
 {% set punctuation = light ? "777" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
@@ -197,6 +197,11 @@
     <option name="Clojure Atom">
       <value />
     </option>
+    <option name="Clojure Braces">
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "a0a0a0" : "606060" }}" />
+      </value>
+    </option>
     <option name="Clojure Keyword">
       <value>
         <option name="FOREGROUND" value="{{ constant }}" />
@@ -205,6 +210,11 @@
     <option name="Clojure Literal">
       <value>
         <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
+    </option>
+    <option name="Clojure Parentheses">
+      <value>
+        <option name="FOREGROUND" value="{{ light ? "a0a0a0" : "606060" }}" />
       </value>
     </option>
     <option name="Closure braces" baseAttributes="Braces" />
@@ -260,8 +270,8 @@
       <value>
 {% block "comment" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "99999922" }}" />
+        <option name="FOREGROUND" value="{{ light ? "6d6607" : "FFF080" }}" />
+        <option name="BACKGROUND" value="{{ light ? "FFFABC" : "F7F7F7" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
     {% endif %}
@@ -341,9 +351,9 @@
       <value>
 {% block "declaration" %}
       {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "dbf1ff" : "6086be" }}" />
+        <option name="BACKGROUND" value="{{ light ? "DBF1FF" : "71ADE7" }}" />
       {% else %}
-        <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
+        <option name="FOREGROUND" value="{{ light ? "195b7c" : "71ADE7" }}" />
       {% endif %}
 {% endblock %}
       </value>
@@ -443,8 +453,8 @@
       <value>
 {% block "string" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ text }}" />
-        <option name="BACKGROUND" value="{{ light ? "e5fad7" : "95CB82" }}" />
+        <option name="FOREGROUND" value="{{ light ? "3c5c00" : "95CB82" }}" />
+        <option name="BACKGROUND" value="{{ light ? "eefbd9" : "F7F7F7" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
     {% endif %}
@@ -603,7 +613,6 @@
     <option name="HAML_TAG_NAME">
       <value />
     </option>
-    <option name="HAML_TEXT" baseAttributes=""/>
     <option name="HAML_WS_REMOVAL">
       <value />
     </option>
