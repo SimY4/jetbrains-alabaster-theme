@@ -16,6 +16,10 @@
 
 ### Security
 
+## 0.3.9 - 2026-02-09
+
+This release contains fixes to declaration highlighting for non-bg themes.
+
 ## 0.3.8 - 2026-02-09
 
 This release ports some of the ideas from the most recent blogpost about Clojure highlighting into IntelliJ. These changes only affect Clojure language support:
