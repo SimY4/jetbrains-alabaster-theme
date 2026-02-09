@@ -8,11 +8,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      # Update Kotlin together with IntelliJ Platform update
+      - dependency-name: "org.jetbrains.kotlin.*"
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-    ignore:
-        # Update Kotlin together with IntelliJ Platform update
-      - dependency-name: "org.jetbrains.kotlin.*"
