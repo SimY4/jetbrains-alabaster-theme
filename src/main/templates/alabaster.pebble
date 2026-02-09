@@ -356,9 +356,9 @@
       <value>
 {% block "declaration" %}
       {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "DBF1FF" : "71ADE7" }}" />
+        <option name="BACKGROUND" value="{{ light ? "DBF1FF" : "F7F7F7" }}" />
       {% else %}
-        <option name="FOREGROUND" value="{{ light ? "195b7c" : "71ADE7" }}" />
+        <option name="FOREGROUND" value="{{ light ? "325cc0" : "71ADE7" }}" />
       {% endif %}
 {% endblock %}
       </value>
