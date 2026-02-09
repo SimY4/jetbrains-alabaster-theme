@@ -2,7 +2,7 @@
 changelog = "2.5.0"
 intelliJPlatform = "2.11.0"
 kotlin = "2.1.21"
-pebble = "4.1.0"
+pebble = "4.1.1"
 
 [libraries]
 pebble = { module = "io.pebbletemplates:pebble", version.ref = "pebble" }
