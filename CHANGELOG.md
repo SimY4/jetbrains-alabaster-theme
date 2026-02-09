@@ -16,6 +16,18 @@
 
 ### Security
 
+## 0.3.8 - 2026-02-09
+
+This release ports some of the ideas from the most recent blogpost about Clojure highlighting into IntelliJ. These changes only affect Clojure language support:
+
+- Clojure parenthesis and brackets are now highlighted grey (all except topmost pair of braces which are still highlighted black)
+- Clojure namespace prefixes are now also greyed out
+- Clojure characters are now highlighted as constants
+- Adjust colours of string, comment, declaration and metadata elements
+- Simplified theme template by removing unnecessary option overrides
+- Custom language comments and number literal highlighting fixes
+- Kotlin punctuation highlighting fixes
+
 ## 0.3.7 - 2025-12-31
 
 Minor changes in this release:
