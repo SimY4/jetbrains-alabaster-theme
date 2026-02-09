@@ -8,7 +8,7 @@ import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.elementType
 
-class GoAnnotator: Annotator {
+class GoAnnotator : Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
     val elementType = element.elementType
     if ((GoTypes.IDENTIFIER == elementType && "nil" == element.text)) {

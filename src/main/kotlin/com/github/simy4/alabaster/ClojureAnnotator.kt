@@ -9,33 +9,43 @@ import com.intellij.psi.util.elementType
 import cursive.lexer.ClojureTokenTypes
 import cursive.psi.ClojurePsiElement
 import cursive.psi.api.ClListLike
+import cursive.psi.api.ClojureFile
 
-class ClojureAnnotator: Annotator {
+class ClojureAnnotator : Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
     val elementType = element.elementType
-    if (ClojureTokenTypes.SYMBOL_TOKEN == elementType) {
-      (element.parent.parent as? ClListLike)
-        ?.takeIf { it.type == ClojurePsiElement.LIST }
-        ?.let { list ->
-          val head = list.headText
-          when (head) {
-            "def"
-              , "defn"
-              , "defn-"
-              , "defmulti"
-              , "defmethod"
-              , "defmacro"
-              , "deftest"
-              , "definterface"
-              , "defprotocol"
-              , "deftype" ->
+    when (elementType) {
+      ClojureTokenTypes.SYMBOL_TOKEN ->
+        (element.parent.parent as? ClListLike)
+          ?.takeIf { it.type == ClojurePsiElement.LIST }
+          ?.let { list ->
+            when (val head = list.headText) {
+              "def",
+              "defn",
+              "defn-",
+              "defmulti",
+              "defmethod",
+              "defmacro",
+              "deftest",
+              "definterface",
+              "defprotocol",
+              "deftype",
+                ->
                 if (element.text !== head) {
                   holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
                     .textAttributes(DefaultLanguageHighlighterColors.FUNCTION_DECLARATION)
                     .create()
                 }
+            }
           }
-      }
+
+      // Top level parentheses are highlighted as standard parentheses, otherwise they are greyish colour.
+      ClojureTokenTypes.LEFT_PAREN, ClojureTokenTypes.RIGHT_PAREN ->
+        (element.parent.parent as? ClojureFile)?.let {
+          holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
+            .textAttributes(DefaultLanguageHighlighterColors.BRACES)
+            .create()
+        }
     }
   }
 }

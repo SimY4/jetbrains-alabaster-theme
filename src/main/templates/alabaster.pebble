@@ -6,7 +6,7 @@
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
 {% set constant = light ? "8a3eb5" : "CC8BC9" %}
-{% set metadata = "999999" %}
+{% set metadata = light ? "a0a0a0" : "606060" %}
 {% set punctuation = light ? "777" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
 {% set text = light ? "00000" : "cecece" %}
@@ -199,7 +199,7 @@
     </option>
     <option name="Clojure Braces">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "a0a0a0" : "606060" }}" />
+        <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
     <option name="Clojure Keyword">
@@ -214,7 +214,7 @@
     </option>
     <option name="Clojure Parentheses">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "a0a0a0" : "606060" }}" />
+        <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
     <option name="Closure braces" baseAttributes="Braces" />

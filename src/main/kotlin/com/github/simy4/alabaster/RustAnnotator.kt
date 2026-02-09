@@ -8,12 +8,13 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.util.elementType
 import org.rust.lang.core.psi.RsElementTypes
 
-class RustAnnotator: Annotator {
+class RustAnnotator : Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
     val elementType = element.elementType
     if (RsElementTypes.TRUE == elementType
       || RsElementTypes.FALSE == elementType
-      || RsElementTypes.BOOL_LITERAL == elementType) {
+      || RsElementTypes.BOOL_LITERAL == elementType
+    ) {
       holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
         .textAttributes(DefaultLanguageHighlighterColors.NUMBER)
         .create()

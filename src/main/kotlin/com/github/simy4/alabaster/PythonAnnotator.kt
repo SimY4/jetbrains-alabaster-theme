@@ -8,11 +8,12 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.util.elementType
 import com.jetbrains.python.PyTokenTypes
 
-class PythonAnnotator: Annotator {
+class PythonAnnotator : Annotator {
   override fun annotate(element: PsiElement, holder: AnnotationHolder) {
     val elementType = element.elementType
     if (PyTokenTypes.BOOL_LITERALS.contains(elementType)
-      || PyTokenTypes.NONE_KEYWORD == elementType) {
+      || PyTokenTypes.NONE_KEYWORD == elementType
+    ) {
       holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
         .textAttributes(DefaultLanguageHighlighterColors.NUMBER)
         .create()
