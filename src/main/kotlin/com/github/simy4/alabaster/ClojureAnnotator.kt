@@ -51,7 +51,6 @@ class ClojureAnnotator : Annotator {
       // Top level parentheses are highlighted as standard parentheses, otherwise they are greyish colour.
       ClojureTokenTypes.LEFT_PAREN, ClojureTokenTypes.RIGHT_PAREN ->
         (element.parent.parent as? ClojureFile)
-          ?.takeIf { it.elementType == ClojurePsiElement.FILE }
           ?.let {
             holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
               .textAttributes(DefaultLanguageHighlighterColors.BRACES)
