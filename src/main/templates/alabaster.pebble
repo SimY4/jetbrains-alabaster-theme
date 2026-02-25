@@ -7,7 +7,7 @@
 {# ----- #}
 {% set constant = light ? "8a3eb5" : "CC8BC9" %}
 {% set metadata = light ? "a0a0a0" : "606060" %}
-{% set punctuation = light ? "777" : "708B8D" %}
+{% set punctuation = light ? "a0a0a0" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
 {% set text = light ? "00000" : "cecece" %}
 {# ----- #}
@@ -197,11 +197,6 @@
     <option name="Clojure Atom">
       <value />
     </option>
-    <option name="Clojure Braces">
-      <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
-      </value>
-    </option>
     <option name="Clojure Character">
       <value>
         <option name="FOREGROUND" value="{{ constant }}" />
@@ -222,7 +217,11 @@
         <option name="FOREGROUND" value="{{ metadata }}" />
       </value>
     </option>
-    <option name="Closure braces" baseAttributes="Braces" />
+    <option name="Closure braces">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="DART_COLON">
       <value />
     </option>
@@ -285,12 +284,12 @@
     </option>
     <option name="DEFAULT_BRACES">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_BRACKETS">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
@@ -421,7 +420,7 @@
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
       <value>
-        <option name="FOREGROUND" value="{{ punctuation }}" />
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="DEFAULT_PARAMETER">
@@ -429,7 +428,7 @@
     </option>
     <option name="DEFAULT_PARENTHS">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_PREDEFINED_SYMBOL">
@@ -735,7 +734,7 @@
     <option name="Instance property reference ID" baseAttributes="INSTANCE_FIELD_ATTRIBUTES" />
     <option name="Interpolated String Injection">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="IVAR">
@@ -780,6 +779,11 @@
       <value />
     </option>
     <option name="JavaScript:INJECTED_LANGUAGE_FRAGMENT" baseAttributes="INJECTED_LANGUAGE_FRAGMENT"/>
+    <option name="KOTLIN_ARROW">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
     <option name="KOTLIN_BACKING_FIELD_VARIABLE">
       <value />
     </option>
@@ -870,6 +874,11 @@
     </option>
     <option name="LABEL">
       <value />
+    </option>
+    <option name="Lambda braces">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
     </option>
     <option name="LESS_VARIABLE">
       <value />

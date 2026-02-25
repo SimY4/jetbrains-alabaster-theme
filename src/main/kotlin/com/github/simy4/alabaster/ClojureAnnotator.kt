@@ -53,7 +53,7 @@ class ClojureAnnotator : Annotator {
         (element.parent.parent as? ClojureFile)
           ?.let {
             holder.newSilentAnnotation(HighlightSeverity.TEXT_ATTRIBUTES)
-              .textAttributes(DefaultLanguageHighlighterColors.BRACES)
+              .textAttributes(DefaultLanguageHighlighterColors.KEYWORD)
               .create()
           }
     }
