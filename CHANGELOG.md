@@ -16,6 +16,10 @@
 
 ### Security
 
+## 0.3.10 - 2026-02-25
+
+Start highlighting punctuation with greyish colour to align better with original.
+
 ## 0.3.9 - 2026-02-09
 
 This release contains fixes to declaration highlighting for non-bg themes.
@@ -27,9 +31,6 @@ This release ports some of the ideas from the most recent blogpost about Clojure
 - Clojure parenthesis and brackets are now highlighted grey (all except topmost pair of braces which are still highlighted black)
 - Clojure namespace prefixes are now also greyed out
 - Clojure characters are now highlighted as constants
-
-Other changes in this release:
-
 - Adjust colours of string, comment, declaration and metadata elements
 - Simplified theme template by removing unnecessary option overrides
 - Custom language comments and number literal highlighting fixes
