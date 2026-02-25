@@ -544,7 +544,9 @@
       <value />
     </option>
     <option name="FOLDED_TEXT_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value />
