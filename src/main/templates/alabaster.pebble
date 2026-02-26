@@ -31,7 +31,7 @@
     <option name="READONLY_BACKGROUND" value="{{ background }}" />
     <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
     <option name="SELECTED_INDENT_GUIDE" value="99999922" />
-    <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
+    <option name="SELECTION_BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
   <attributes>
