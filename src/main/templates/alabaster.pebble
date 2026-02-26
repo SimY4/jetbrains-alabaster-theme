@@ -27,7 +27,7 @@
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
     <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
-    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
+    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
     <option name="READONLY_BACKGROUND" value="{{ background }}" />
     <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
     <option name="SELECTED_INDENT_GUIDE" value="99999922" />
@@ -1077,8 +1077,8 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ selection }}" />
-        <option name="EFFECT_COLOR" value="{{ selection }}" />
+        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
