@@ -5,10 +5,12 @@
 {% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
+{% set background = light ? "f7f7f7" : "0E1415" %}
 {% set constant = light ? "8a3eb5" : "CC8BC9" %}
 {% set metadata = light ? "a0a0a0" : "606060" %}
 {% set punctuation = light ? "a0a0a0" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
+{% set selection = light ? "007ACC" : "293334" %}
 {% set text = light ? "00000" : "cecece" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
@@ -17,16 +19,19 @@
     <property name="ideVersion">2022.3.1.0.0</property>
   </metaInfo>
   <colors>
-    <option name="CARET_COLOR" value="{{ light ? "007ACC" : "CD974B" }}"/>
+    <option name="CARET_COLOR" value="{{ light ? "007ACC55" : "CD974B" }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{{ light ? "f7f7f7" : "0E1415" }}"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
+    <option name="INDENT_GUIDE" value="99999922" />
     <option name="DOC_COMMENT_LINK" value="{{ bg ? "695900" : (light ? "aa3731" : "ffc66e") }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
-    <option name="GUTTER_BACKGROUND" value="{{ light ? "f7f7f7" : "0E1415" }}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
-    <option name="READONLY_BACKGROUND" value="{{ light ? "f7f7f7" : "0E1415" }}" />
-    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ light ? "f7f7f7" : "0E1415" }}" />
-    <option name="SELECTION_BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}" />
+    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
+    <option name="READONLY_BACKGROUND" value="{{ background }}" />
+    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
+    <option name="SELECTED_INDENT_GUIDE" value="99999922" />
+    <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
   <attributes>
@@ -1072,7 +1077,8 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ search }}" />
+        <option name="FOREGROUND" value="{{ selection }}" />
+        <option name="EFFECT_COLOR" value="{{ selection }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
