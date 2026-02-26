@@ -16,6 +16,13 @@
 
 ### Security
 
+## 0.3.11 - 2026-02-26
+
+- Folded brackets are now highlighted the same way as regular brackets
+- Caret cursor highlighting changes
+- Matching braces highlighting changes
+- Indent guides highlighting changes
+
 ## 0.3.10 - 2026-02-25
 
 Start highlighting punctuation with greyish colour to align better with original.
