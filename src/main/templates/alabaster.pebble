@@ -1160,6 +1160,11 @@
     <option name="OC_FORMAT_TOKEN">
       <value />
     </option>
+    <option name="PEBBLE_DELIMITER">
+      <value>
+        <option name="FOREGROUND" value="a0a0a0" />
+      </value>
+    </option>
     <option name="PHP_HEREDOC_CONTENT">
       <value />
     </option>
