@@ -1197,7 +1197,7 @@
     </option>
     <option name="PEBBLE_DELIMITER">
       <value>
-        <option name="FOREGROUND" value="a0a0a0" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="PHP_HEREDOC_CONTENT">
