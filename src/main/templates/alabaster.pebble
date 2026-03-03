@@ -1713,6 +1713,11 @@
     <option name="YAML_SCALAR_VALUE">
       <value />
     </option>
+    <option name="YAML_SIGN">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
     <option name="com.plan9.IDENTIFIER">
       <value />
     </option>
