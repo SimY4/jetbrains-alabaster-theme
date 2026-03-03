@@ -40,6 +40,7 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
     <depends optional="true" config-file="with-python.xml">PythonCore</depends>
     <depends optional="true" config-file="with-rust.xml">com.jetbrains.rust</depends>
     <depends optional="true" config-file="with-scala.xml">org.intellij.scala</depends>
+    <depends optional="true" config-file="with-yaml.xml">org.jetbrains.plugins.yaml</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <themeProvider id="com.github.simy4.alabaster.light" path="/themes/alabaster.theme.json"/>

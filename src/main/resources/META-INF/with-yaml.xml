@@ -1,0 +1,5 @@
+<idea-plugin>
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="yaml" implementationClass="com.github.simy4.alabaster.YAMLAnnotator"/>
+    </extensions>
+</idea-plugin>

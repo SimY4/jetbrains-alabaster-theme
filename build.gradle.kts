@@ -34,7 +34,7 @@ repositories {
 dependencies {
   intellijPlatform {
     intellijIdea(providers.gradleProperty("platformVersion"))
-    bundledPlugins("org.jetbrains.kotlin", "com.intellij.java")
+    bundledPlugins("com.intellij.java", "org.jetbrains.kotlin", "org.jetbrains.plugins.yaml")
     plugins(
       "com.cursiveclojure.cursive:2025.2-252",
       "com.jetbrains.rust:252.27397.133",
