@@ -16,6 +16,12 @@
 
 ### Security
 
+## 0.3.12 - 2026-03-03
+
+- Improvements to YAML language highlighting
+- Improvements to pebble language highlighting
+- Improvements to [highlight matching braces plugin](https://plugins.jetbrains.com/plugin/10465-highlightbracketpair) highlighting
+
 ## 0.3.11 - 2026-02-26
 
 - Folded brackets are now highlighted the same way as regular brackets
