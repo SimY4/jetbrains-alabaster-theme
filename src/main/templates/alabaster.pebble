@@ -669,19 +669,27 @@
         <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
+    <option name="HTTP_HEADER_FIELD_NAME">
+      <value />
+    </option>
+    <option name="HTTP_REQUEST_DIFFERENCE_FILE">
+      <value />
+    </option>
     <option name="HTTP_REQUEST_INPUT_FILE">
       <value />
     </option>
     <option name="HTTP_REQUEST_MESSAGE_BODY">
       <value />
     </option>
+    <option name="HTTP_REQUEST_NAME">
+      <value>
+    {{ block("comment") }}
+      </value>
+    </option>
     <option name="HTTP_REQUEST_PARAMETER_NAME">
       <value />
     </option>
     <option name="HTTP_REQUEST_PARAMETER_VALUE">
-      <value />
-    </option>
-    <option name="HTTP_REQUEST_VARIABLE_BRACES">
       <value />
     </option>
     <option name="HYPERLINK_ATTRIBUTES">
@@ -1484,6 +1492,14 @@
       <value />
     </option>
     <option name="SLIM_TAG_START">
+      <value />
+    </option>
+    <option name="SPEL.BOUNDS">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
+    </option>
+    <option name="SPEL.METHOD_CALL">
       <value />
     </option>
     <option name="SPY-JS.EXCEPTION">
