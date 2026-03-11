@@ -1838,6 +1838,11 @@
     <option name="org.rust.VARIABLE">
       <value />
     </option>
+    <option name="org.toml.BOOLEAN">
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
+    </option>
     <option name="org.toml.KEY">
       <value />
     </option>
