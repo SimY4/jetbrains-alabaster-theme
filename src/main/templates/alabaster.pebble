@@ -1729,7 +1729,11 @@
     <option name="XPATH.XPATH_NAME">
       <value />
     </option>
-    <option name="YAML_ANCHOR" baseAttributes="DEFAULT_IDENTIFIER"/>
+    <option name="YAML_ANCHOR">
+      <value>
+    {{ block("declaration") }}
+      </value>
+    </option>
     <option name="YAML_SCALAR_KEY">
       <value />
     </option>
