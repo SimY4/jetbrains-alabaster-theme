@@ -247,7 +247,7 @@
     </option>
     <option name="Closure braces">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DART_COLON">
@@ -924,11 +924,16 @@
     </option>
     <option name="Lambda braces">
       <value>
-        <option name="FOREGROUND" value="{{ text }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="LESS_VARIABLE">
       <value />
+    </option>
+    <option name="List/map to object conversion">
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="LIVE_TEMPLATE_ATTRIBUTES">
       <value />
@@ -1759,6 +1764,16 @@
     </option>
     <option name="io.github.intellij.dlanguage.sdlang.TAG_IDENTIFIER">
       <value />
+    </option>
+    <option name="org.gradle.declarative.BOOLEAN">
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
+    </option>
+    <option name="org.gradle.declarative.NULL">
+      <value>
+        <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
     </option>
     <option name="org.rust.ASSOC_FUNCTION" baseAttributes="DEFAULT_STATIC_METHOD" />
     <option name="org.rust.ASSOC_FUNCTION_CALL">
