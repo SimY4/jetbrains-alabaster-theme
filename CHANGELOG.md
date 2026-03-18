@@ -16,6 +16,16 @@
 
 ### Security
 
+## 0.3.13 - 2026-03-18
+
+- Changes to caret and selection highlighting
+- Fixes to not top stack trace line highlighting in debug mode
+- Fixes to SpEl language highlighting
+- Fixes to Groovy language highlighting
+- JSON keyword highlighting
+- TOML boolean highlighting
+- YAML anchor/reference highlighting
+
 ## 0.3.12 - 2026-03-03
 
 - Improvements to YAML language highlighting
