@@ -6,11 +6,12 @@
 {% set parent_scheme = light ? "Default" : "Darcula" %}
 {# ----- #}
 {% set background = light ? "f7f7f7" : "0E1415" %}
+{% set caret = light ? "007ACC99" : "CD974B" %}
 {% set constant = light ? "8a3eb5" : "CC8BC9" %}
 {% set metadata = light ? "a0a0a0" : "606060" %}
 {% set punctuation = light ? "a0a0a0" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
-{% set selection = light ? "007ACC" : "293334" %}
+{% set selection = light ? "BFDBFE" : "CD974B55" %}
 {% set text = light ? "00000" : "cecece" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
@@ -19,7 +20,7 @@
     <property name="ideVersion">2022.3.1.0.0</property>
   </metaInfo>
   <colors>
-    <option name="CARET_COLOR" value="{{ light ? "007ACC55" : "CD974B" }}"/>
+    <option name="CARET_COLOR" value="{{ caret }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
     <option name="INDENT_GUIDE" value="99999922" />
@@ -27,11 +28,11 @@
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
     <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
-    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+    <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
     <option name="READONLY_BACKGROUND" value="{{ background }}" />
     <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
     <option name="SELECTED_INDENT_GUIDE" value="99999922" />
-    <option name="SELECTION_BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}" />
+    <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
   <attributes>
@@ -73,15 +74,15 @@
     </option>
     <option name="BRACE_ATTR">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="BRACKET_ATTR">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -201,8 +202,8 @@
     </option>
     <option name="CUSP_BRACKETS_ATTR">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -520,8 +521,8 @@
     </option>
     <option name="DOUBLE_QUOTE_ATTR">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -570,7 +571,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{ light ? "BFDBFE" : "293334" }}"/>
+        <option name="BACKGROUND" value="{{ selection }}"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
@@ -1123,8 +1124,8 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -1150,7 +1151,9 @@
       <value />
     </option>
     <option name="NOT_TOP_FRAME_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="BACKGROUND" value="{{ selection }}"/>
+      </value>
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
@@ -1208,8 +1211,8 @@
     </option>
     <option name="PARENTHESIS_ATTR">
       <value>
-        <option name="FOREGROUND" value="{{ light ? "007ACC" : "CD974B" }}" />
-        <option name="EFFECT_COLOR" value="{{ light ? "007ACC" : "CD974B" }}" />
+        <option name="FOREGROUND" value="{{ caret }}" />
+        <option name="EFFECT_COLOR" value="{{ caret }}" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
