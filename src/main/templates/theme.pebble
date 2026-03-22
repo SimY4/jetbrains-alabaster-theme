@@ -1,8 +1,8 @@
 {# @pebvariable name="file_suffix" type="String" #}
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
-{% set light = ["", "bg"] contains variant %}
-{% set bg = variant == "bg" %}
+{% set light = ["", "bg", "mono"] contains variant %}
+{% set bg = ["bg", "mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}

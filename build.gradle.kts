@@ -104,17 +104,13 @@ tasks.register("generate") {
       themesDir.mkdirs()
     }
 
-    listOf("bg", "dark", "").forEach { variant ->
+    listOf("bg", "dark", "mono", "mono-dark", "").forEach { variant ->
       val nameSuffix = when(variant) {
         "bg" -> " BG"
-        "dark" -> " Dark"
-        else -> ""
+        "" -> ""
+        else -> variant.split('-').joinToString(" ", prefix = " ") { word -> word.replaceFirstChar { it.titlecaseChar() } }
       }
-      val fileSuffix = when(variant) {
-        "bg" -> "-bg"
-        "dark" -> "-dark"
-        else -> ""
-      }
+      val fileSuffix = if (variant.isEmpty()) variant else "-$variant"
 
       val context = mapOf("variant" to variant, "name_suffix" to nameSuffix, "file_suffix" to fileSuffix)
       file("src/main/resources/themes/alabaster$fileSuffix.xml").writer().use { schemeTemplate.evaluate(it, context) }

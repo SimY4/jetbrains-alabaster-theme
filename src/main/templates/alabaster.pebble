@@ -1,7 +1,7 @@
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
-{% set light = ["", "bg"] contains variant %}
-{% set bg = variant == "bg" %}
+{% set light = ["", "bg", "mono"] contains variant %}
+{% set bg = ["bg", "mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = bg ? "ffffff" : (light ? "f7f7f7" : "0E1415") %}
 {% set caret = light ? "007ACC99" : "CD974B" %}
