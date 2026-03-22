@@ -117,8 +117,8 @@ tasks.register("generate") {
       }
 
       val context = mapOf("variant" to variant, "name_suffix" to nameSuffix, "file_suffix" to fileSuffix)
-      schemeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.xml").writer(), context)
-      themeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer(), context)
+      file("src/main/resources/themes/alabaster$fileSuffix.xml").writer().use { schemeTemplate.evaluate(it, context) }
+      file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer().use { themeTemplate.evaluate(it, context) }
     }
   }
 }
