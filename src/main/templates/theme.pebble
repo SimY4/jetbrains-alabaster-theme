@@ -1,22 +1,21 @@
+{# @pebvariable name="file_suffix" type="String" #}
+{# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
-{# @pebvariable name="flavour" type="String" #}
-{% set light = variant == "light" %}
-{% set bg = flavour == "bg" %}
-{% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
-{% set scheme_suffix = (light ? "" : "-dark") ~ (bg ? "-bg" : "") %}
+{% set light = ["", "bg"] contains variant %}
+{% set bg = variant == "bg" %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
-{% set primaryBackground = bg ? (light ? "FFFFFF" : "0E1415") : (light ? "F7F7F7" : "0E1415") %}
+{% set primaryBackground = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set searchMatchBackground = light ? "FFBC5D" : "CD974B" %}
 {% set selectionBackground = light ? "B4D8FD" : "293334" %}
 {% set selectionForeground = light ? "000000" : "FFFFFF" %}
 {# ----- #}
 {
   "author": "Alex Simkin",
-  "dark": {{ light ? "false" : "true" }},
+  "dark": {{ not light }},
   "name": "Alabaster{{ name_suffix }}",
-  "editorScheme": "/themes/alabaster{{ scheme_suffix }}.xml",
+  "editorScheme": "/themes/alabaster{{ file_suffix }}.xml",
   "ui": {
     "Islands": 1,
     "Island": {

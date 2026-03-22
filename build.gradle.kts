@@ -104,25 +104,21 @@ tasks.register("generate") {
       themesDir.mkdirs()
     }
 
-    listOf("light", "dark").forEach { variant ->
-      listOf("", "bg").forEach { flavour ->
-        if (variant == "dark" && flavour == "bg") return@forEach
-
-        val fileSuffix = listOf(variant, flavour).joinToString("") {
-          when (it) {
-            "dark" -> "-dark"
-            "bg" -> "-bg"
-            else -> ""
-          }
-        }
-
-        val context = mapOf(
-          "variant" to variant,
-          "flavour" to flavour
-        )
-        schemeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.xml").writer(), context)
-        themeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer(), context)
+    listOf("bg", "dark", "").forEach { variant ->
+      val nameSuffix = when(variant) {
+        "bg" -> " BG"
+        "dark" -> " Dark"
+        else -> ""
       }
+      val fileSuffix = when(variant) {
+        "bg" -> "-bg"
+        "dark" -> "-dark"
+        else -> ""
+      }
+
+      val context = mapOf("variant" to variant, "name_suffix" to nameSuffix, "file_suffix" to fileSuffix)
+      schemeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.xml").writer(), context)
+      themeTemplate.evaluate(file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer(), context)
     }
   }
 }

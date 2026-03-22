@@ -1,20 +1,18 @@
+{# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
-{# @pebvariable name="flavour" type="String" #}
-{% set light = variant == "light" %}
-{% set bg = flavour == "bg" %}
-{% set name_suffix = (light ? "" : " Dark") ~ (bg ? " BG" : "") %}
-{% set parent_scheme = light ? "Default" : "Darcula" %}
+{% set light = ["", "bg"] contains variant %}
+{% set bg = variant == "bg" %}
 {# ----- #}
-{% set background = light ? "f7f7f7" : "0E1415" %}
+{% set background = bg ? "ffffff" : (light ? "f7f7f7" : "0E1415") %}
 {% set caret = light ? "007ACC99" : "CD974B" %}
 {% set constant = light ? "8a3eb5" : "CC8BC9" %}
 {% set metadata = light ? "a0a0a0" : "606060" %}
 {% set punctuation = light ? "a0a0a0" : "708B8D" %}
 {% set search = light ? "FFBC5D" : "CD974B" %}
 {% set selection = light ? "BFDBFE" : "CD974B55" %}
-{% set text = light ? "00000" : "cecece" %}
+{% set text = light ? "000000" : "cecece" %}
 {# ----- #}
-<scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ parent_scheme }}">
+<scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ light ? "Default" : "Darcula" }}">
   <metaInfo>
     <property name="ide">idea</property>
     <property name="ideVersion">2022.3.1.0.0</property>
@@ -1632,11 +1630,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
-    {% if light %}
-        <option name="BACKGROUND" value="{{ bg ? "FFFFFF" : "F7F7F7" }}" />
-    {% else %}
-        <option name="BACKGROUND" value="0E1415" />
-    {% endif %}
+        <option name="BACKGROUND" value="{{ background }}" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
