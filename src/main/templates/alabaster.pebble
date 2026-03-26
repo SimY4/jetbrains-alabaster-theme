@@ -1,7 +1,8 @@
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
-{% set light = ["", "bg", "mono"] contains variant %}
 {% set bg = ["bg", "mono", "mono-dark"] contains variant %}
+{% set light = ["", "bg", "mono"] contains variant %}
+{% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = bg ? "ffffff" : (light ? "f7f7f7" : "0E1415") %}
 {% set caret = light ? "007ACC99" : "CD974B" %}
@@ -43,13 +44,14 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
+{% block "error" %}
     {% if bg %}
         <option name="FOREGROUND" value="c33" />
         <option name="BACKGROUND" value="ffe0e0" />
-    {%  else %}
+    {% endif %}
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
-    {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
@@ -301,8 +303,8 @@
       <value>
 {% block "comment" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "6d6607" : "FFF080" }}" />
-        <option name="BACKGROUND" value="{{ light ? "FFFABC" : "F7F7F7" }}" />
+        <option name="FOREGROUND" value="6d6607" />
+        <option name="BACKGROUND" value="{{ mono ? "999999" : "FFFABC" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
     {% endif %}
@@ -347,7 +349,7 @@
     <option name="DEFAULT_DOC_COMMENT_TAG">
       <value>
     {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "6086be" }}" />
+        <option name="BACKGROUND" value="{{ mono ? "999999" : "fffabc" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
     {% endif %}
@@ -382,7 +384,7 @@
       <value>
 {% block "declaration" %}
       {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "DBF1FF" : "F7F7F7" }}" />
+        <option name="BACKGROUND" value="{{ mono ? "999999" : "DBF1FF" }}" />
       {% else %}
         <option name="FOREGROUND" value="{{ light ? "325cc0" : "71ADE7" }}" />
       {% endif %}
@@ -408,7 +410,7 @@
 {% block "escape" %}
     {% if bg %}
         <option name="FOREGROUND" value="{{ constant }}" />
-        <option name="BACKGROUND" value="{{ light ? "DBECB6" : "95CB82" }}" />
+        <option name="BACKGROUND" value="DBECB6" />
     {% else %}
         <option name="FOREGROUND" value="{{ constant }}" />
     {% endif %}
@@ -484,8 +486,8 @@
       <value>
 {% block "string" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "3c5c00" : "95CB82" }}" />
-        <option name="BACKGROUND" value="{{ light ? "eefbd9" : "F7F7F7" }}" />
+        <option name="FOREGROUND" value="3c5c00" />
+        <option name="BACKGROUND" value="eefbd9" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
     {% endif %}
@@ -552,13 +554,11 @@
     </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
-    {% if bg %}
+    {{ block("error") }}
+    {% if not bg %}
         <option name="FOREGROUND" value="c33" />
-        <option name="BACKGROUND" value="ffe0e0" />
     {% endif %}
-        <option name="EFFECT_COLOR" value="ff0000" />
         <option name="ERROR_STRIPE_COLOR" value="cf5b56" />
-        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="EVALUATED_EXPRESSION_ATTRIBUTES">
@@ -730,8 +730,8 @@
     <option name="INLAY_DEFAULT">
       <value>
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "99999922" }}" />
+        <option name="FOREGROUND" value="{{ mono ? "FFFFFF" : "695900" }}" />
+        <option name="BACKGROUND" value="{{ mono ? "999999" : "fffabc" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
         <option name="BACKGROUND" value="99999922" />
@@ -741,7 +741,7 @@
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="FOREGROUND" value="{{ mono ? "FFFFFF" : "695900" }}" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
     {% endif %}
@@ -760,7 +760,7 @@
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
     {{ block("comment") }}
-        <option name="EFFECT_COLOR" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="EFFECT_COLOR" value="{{ bg ? "695900" : (light ? "aa3731" : "ffc66e") }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -1662,15 +1662,11 @@
     </option>
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="c33" />
-        <option name="BACKGROUND" value="ffe0e0" />
-    {% else %}
+    {{ block("error") }}
+    {% if not bg %}
         <option name="FOREGROUND" value="c33" />
     {% endif %}
-        <option name="EFFECT_COLOR" value="ff0000" />
         <option name="ERROR_STRIPE_COLOR" value="cf5b56" />
-        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
     <option name="Unresolved reference access" baseAttributes="DEFAULT_IDENTIFIER" />
@@ -1700,13 +1696,7 @@
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="c33" />
-        <option name="BACKGROUND" value="ffe0e0" />
-    {%  else %}
-        <option name="EFFECT_COLOR" value="ff0000" />
-        <option name="EFFECT_TYPE" value="2" />
-    {% endif %}
+    {{ block("error") }}
       </value>
     </option>
     <option name="XML_NS_PREFIX">
