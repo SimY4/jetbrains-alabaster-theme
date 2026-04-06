@@ -16,6 +16,10 @@
 
 ### Security
 
+## 0.3.15 - 2026-04-06
+
+This release addresses bright blue background in BG color scheme.
+
 ## 0.3.14 - 2026-04-06
 
 - Adjusted colors to closely match the original
