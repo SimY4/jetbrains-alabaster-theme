@@ -92,6 +92,9 @@ changelog {
 tasks.register("generate") {
   notCompatibleWithConfigurationCache("Pebble classes are not serializable")
 
+  inputs.dir("src/main/templates")
+  outputs.dir("src/main/resources/themes")
+
   doLast {
     val engine = PebbleEngine.Builder().loader(FileLoader(file("src/main/templates/").absolutePath).apply {
       suffix = ".pebble"
@@ -138,7 +141,7 @@ tasks {
     }
   }
 
-  buildPlugin {
+  processResources {
     dependsOn("generate")
   }
 
