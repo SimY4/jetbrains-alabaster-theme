@@ -16,6 +16,11 @@
 
 ### Security
 
+## 0.3.14 - 2026-04-06
+
+- Adjusted colors to closely match the original
+- IDE islands now have borders
+
 ## 0.3.13 - 2026-03-18
 
 - Changes to caret and selection highlighting
