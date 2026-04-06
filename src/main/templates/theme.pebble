@@ -6,10 +6,10 @@
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
-{% set primaryBackground = bg ? "FFF" : (light ? "F7F7F7" : "0E1415") %}
+{% set primaryBackground = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set searchMatchBackground = light ? "FFBC5D" : "00BFFF" %}
 {% set selectionBackground = bg ? "B4D8FD" : light ? "BFDBFE" : "293334" %}
-{% set selectionForeground = light ? "000" : "FFF" %}
+{% set selectionForeground = light ? "000000" : "FFFFFF" %}
 {# ----- #}
 {
   "author": "Alex Simkin",

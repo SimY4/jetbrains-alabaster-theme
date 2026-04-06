@@ -3,7 +3,7 @@
 {% set light = ["", "bg", "mono"] contains variant %}
 {% set bg = ["bg", "mono", "mono-dark"] contains variant %}
 {# ----- #}
-{% set background = bg ? "FFF" : (light ? "F7F7F7" : "0E1415") %}
+{% set background = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set caret = light ? "43BEF4" : "00BFFF" %}
 {% set constant = light ? "8A3EB5" : "CC8BC9" %}
 {% set punctuation = light ? "A0A0A0" : "73808C" %}
