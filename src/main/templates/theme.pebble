@@ -5,7 +5,6 @@
 {% set bg = ["bg", "mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
-{% set border = light ? "A0A0A0" : "73808C" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
 {% set primaryBackground = bg ? "FFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set searchMatchBackground = light ? "FFBC5D" : "00BFFF" %}
@@ -26,7 +25,7 @@
       "borderArcLength.compact": 10,
       "borderWidth": 6,
       "borderWidth.compact": 4,
-      "borderColor": "#{{ border }}",
+      "borderColor": "#99999922",
       "inactiveAlpha": 0.56,
       "toolWindowAlpha": 0.2
     },
