@@ -3,14 +3,13 @@
 {% set light = ["", "bg", "mono"] contains variant %}
 {% set bg = ["bg", "mono", "mono-dark"] contains variant %}
 {# ----- #}
-{% set background = bg ? "ffffff" : (light ? "f7f7f7" : "0E1415") %}
-{% set caret = light ? "007ACC99" : "CD974B" %}
-{% set constant = light ? "8a3eb5" : "CC8BC9" %}
-{% set metadata = light ? "a0a0a0" : "606060" %}
-{% set punctuation = light ? "a0a0a0" : "708B8D" %}
-{% set search = light ? "FFBC5D" : "CD974B" %}
-{% set selection = light ? "BFDBFE" : "CD974B55" %}
-{% set text = light ? "000000" : "cecece" %}
+{% set background = bg ? "FFF" : (light ? "F7F7F7" : "0E1415") %}
+{% set caret = light ? "43BEF4" : "00BFFF" %}
+{% set constant = light ? "8A3EB5" : "CC8BC9" %}
+{% set punctuation = light ? "A0A0A0" : "73808C" %}
+{% set search = light ? "FFBC5D" : "00BFFF" %}
+{% set selection = bg ? "B4D8FD" : light ? "BFDBFE" : "293334" %}
+{% set text = light ? "000000" : "CECECE" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ light ? "Default" : "Darcula" }}">
   <metaInfo>
@@ -22,7 +21,7 @@
     <option name="CARET_ROW_COLOR" value=""/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
     <option name="INDENT_GUIDE" value="99999922" />
-    <option name="DOC_COMMENT_LINK" value="{{ bg ? "695900" : (light ? "aa3731" : "ffc66e") }}"/>
+    <option name="DOC_COMMENT_LINK" value="{{ bg ? "000" : light ? "325CC0" : "71ADE7" }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
     <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
@@ -43,6 +42,7 @@
     </option>
     <option name="BAD_CHARACTER">
       <value>
+{% block "error" %}
     {% if bg %}
         <option name="FOREGROUND" value="c33" />
         <option name="BACKGROUND" value="ffe0e0" />
@@ -50,6 +50,7 @@
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
     {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="BASH.BINARY_DATA">
@@ -241,7 +242,7 @@
     </option>
     <option name="Clojure Parentheses">
       <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="Closure braces">
@@ -284,12 +285,12 @@
     </option>
     <option name="DEBUGGER_INLINED_VALUES">
       <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEBUGGER_INLINED_VALUES_EXECUTION_LINE">
       <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_ATTRIBUTE">
@@ -301,10 +302,10 @@
       <value>
 {% block "comment" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "6d6607" : "FFF080" }}" />
-        <option name="BACKGROUND" value="{{ light ? "FFFABC" : "F7F7F7" }}" />
+        <option name="FOREGROUND" value="000" />
+        <option name="BACKGROUND" value="FFFABC" />
     {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
+        <option name="FOREGROUND" value="{{ light ? "AA3731" : "DFDF8E" }}" />
     {% endif %}
 {% endblock %}
       </value>
@@ -347,9 +348,9 @@
     <option name="DEFAULT_DOC_COMMENT_TAG">
       <value>
     {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "6086be" }}" />
+        <option name="BACKGROUND" value="FFFABC" />
     {% else %}
-        <option name="FOREGROUND" value="{{ light ? "325cc0" : "6086be" }}" />
+        <option name="FOREGROUND" value="{{ light ? "325CC0" : "71ADE7" }}" />
     {% endif %}
       </value>
     </option>
@@ -382,9 +383,10 @@
       <value>
 {% block "declaration" %}
       {% if bg %}
-        <option name="BACKGROUND" value="{{ light ? "DBF1FF" : "F7F7F7" }}" />
+        <option name="FOREGROUND" value="195B7C" />
+        <option name="BACKGROUND" value="DBF1FF" />
       {% else %}
-        <option name="FOREGROUND" value="{{ light ? "325cc0" : "71ADE7" }}" />
+        <option name="FOREGROUND" value="{{ light ? "325CC0" : "71ADE7" }}" />
       {% endif %}
 {% endblock %}
       </value>
@@ -407,11 +409,9 @@
       <value>
 {% block "escape" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ constant }}" />
-        <option name="BACKGROUND" value="{{ light ? "DBECB6" : "95CB82" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ constant }}" />
+        <option name="BACKGROUND" value="DBECB6" />
     {% endif %}
+        <option name="FOREGROUND" value="{{ light ? "777" : "ffffff10" }}" />
 {% endblock %}
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
@@ -437,7 +437,7 @@
     </option>
     <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="{{ metadata }}" />
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="DEFAULT_NUMBER">
@@ -484,10 +484,10 @@
       <value>
 {% block "string" %}
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "3c5c00" : "95CB82" }}" />
-        <option name="BACKGROUND" value="{{ light ? "eefbd9" : "F7F7F7" }}" />
+        <option name="FOREGROUND" value="3c5c00" />
+        <option name="BACKGROUND" value="eefbd9" />
     {% else %}
-        <option name="FOREGROUND" value="{{ light ? "448c27" : "95CB82" }}" />
+        <option name="FOREGROUND" value="{{ light ? "448C27" : "95CB82" }}" />
     {% endif %}
 {% endblock %}
       </value>
@@ -507,7 +507,7 @@
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_COLOR" value="{{ punctuation }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -554,10 +554,10 @@
       <value>
     {% if bg %}
         <option name="FOREGROUND" value="c33" />
-        <option name="BACKGROUND" value="ffe0e0" />
+        <option name="BACKGROUND" value="FFE0E0" />
     {% endif %}
         <option name="EFFECT_COLOR" value="ff0000" />
-        <option name="ERROR_STRIPE_COLOR" value="cf5b56" />
+        <option name="ERROR_STRIPE_COLOR" value="c33" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -729,11 +729,8 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
-        <option name="BACKGROUND" value="{{ light ? "fffabc" : "99999922" }}" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
+    {{ block("comment") }}
+    {% if not bg %}
         <option name="BACKGROUND" value="99999922" />
     {% endif %}
       </value>
@@ -741,9 +738,9 @@
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
     {% if bg %}
-        <option name="FOREGROUND" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="FOREGROUND" value="000" />
     {% else %}
-        <option name="FOREGROUND" value="{{ light ? "aa3731" : "ffc66e" }}" />
+        <option name="FOREGROUND" value="{{ light ? "AA3731" : "DFDF8E" }}" />
     {% endif %}
       </value>
     </option>
@@ -1116,7 +1113,7 @@
     </option>
     <option name="MARKED_FOR_REMOVAL_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_COLOR" value="{{ punctuation }}" />
         <option name="EFFECT_TYPE" value="3" />
       </value>
     </option>
@@ -1155,7 +1152,7 @@
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="{{ metadata }}" />
+        <option name="EFFECT_COLOR" value="{{ punctuation }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -1663,13 +1660,11 @@
     <option name="UNMATCHED_BRACE_ATTRIBUTES">
       <value>
     {% if bg %}
-        <option name="FOREGROUND" value="c33" />
         <option name="BACKGROUND" value="ffe0e0" />
-    {% else %}
-        <option name="FOREGROUND" value="c33" />
     {% endif %}
+        <option name="FOREGROUND" value="c33" />
         <option name="EFFECT_COLOR" value="ff0000" />
-        <option name="ERROR_STRIPE_COLOR" value="cf5b56" />
+        <option name="ERROR_STRIPE_COLOR" value="c33" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -1700,13 +1695,7 @@
     </option>
     <option name="WRONG_REFERENCES_ATTRIBUTES">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="c33" />
-        <option name="BACKGROUND" value="ffe0e0" />
-    {%  else %}
-        <option name="EFFECT_COLOR" value="ff0000" />
-        <option name="EFFECT_TYPE" value="2" />
-    {% endif %}
+    {{ block("error") }}
       </value>
     </option>
     <option name="XML_NS_PREFIX">
