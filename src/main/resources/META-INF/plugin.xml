@@ -46,9 +46,13 @@ Other languages work perfectly fine as well, but may do some extra unnecessary h
         <themeProvider id="com.github.simy4.alabaster.light" path="/themes/alabaster.theme.json"/>
         <themeProvider id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg.theme.json"/>
         <themeProvider id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark.theme.json"/>
+        <themeProvider id="com.github.simy4.alabaster.mono" path="/themes/alabaster-mono.theme.json"/>
+        <themeProvider id="com.github.simy4.alabaster.mono-dark" path="/themes/alabaster-mono-dark.theme.json"/>
 
         <bundledColorScheme id="com.github.simy4.alabaster.light" path="/themes/alabaster"/>
         <bundledColorScheme id="com.github.simy4.alabaster.bg-light" path="/themes/alabaster-bg"/>
         <bundledColorScheme id="com.github.simy4.alabaster.dark" path="/themes/alabaster-dark"/>
+        <bundledColorScheme id="com.github.simy4.alabaster.mono" path="/themes/alabaster-mono"/>
+        <bundledColorScheme id="com.github.simy4.alabaster.mono-dark" path="/themes/alabaster-mono-dark"/>
     </extensions>
 </idea-plugin>
