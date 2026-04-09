@@ -16,6 +16,11 @@
 
 ### Security
 
+## 0.3.16 - 2026-04-09
+
+- fix: invalid string escape highlighting in dark mode.
+- fix: uniform error highlighting.
+
 ## 0.3.15 - 2026-04-06
 
 This release addresses bright blue background in BG color scheme.
