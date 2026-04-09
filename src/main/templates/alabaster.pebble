@@ -410,8 +410,11 @@
 {% block "escape" %}
     {% if bg %}
         <option name="BACKGROUND" value="DBECB6" />
+    {% elseif light %}
+        <option name="FOREGROUND" value="777777" />
+    {% else %}
+        <option name="BACKGROUND" value="FFFFFF10" />
     {% endif %}
-        <option name="FOREGROUND" value="{{ light ? "777" : "ffffff10" }}" />
 {% endblock %}
         <option name="EFFECT_COLOR" value="ff0000" />
         <option name="EFFECT_TYPE" value="2" />
