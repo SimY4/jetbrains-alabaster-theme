@@ -663,6 +663,7 @@
         <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
+    <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
     <option name="HTML_TAG_NAME">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
@@ -1693,6 +1694,7 @@
     {{ block("error") }}
       </value>
     </option>
+    <option name="XML_CUSTOM_TAG_NAME" baseAttributes="XML_TAG_NAME" />
     <option name="XML_NS_PREFIX">
       <value />
     </option>
