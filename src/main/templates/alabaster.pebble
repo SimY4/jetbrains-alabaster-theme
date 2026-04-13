@@ -1234,6 +1234,7 @@
     <option name="PHP_THIS_VAR">
       <value />
     </option>
+    <option name="PROPERTIES.KEY" baseAttributes="DEFAULT_KEYWORD" />
     <option name="PROTOCOL_REFERENCE">
       <value />
     </option>
@@ -1695,6 +1696,7 @@
     <option name="XML_NS_PREFIX">
       <value />
     </option>
+    <option name="XML_TAG" baseAttributes="DEFAULT_TAG" />
     <option name="XML_TAG_NAME">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
