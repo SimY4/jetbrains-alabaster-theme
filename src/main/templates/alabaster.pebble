@@ -533,6 +533,17 @@
     <option name="DUPLICATE_FROM_SERVER">
       <value />
     </option>
+    <option name="EDITORCONFIG_PATTERN">
+      <value>
+    {{ block("string") }}
+      </value>
+    </option>
+    <option name="EDITORCONFIG_PROPERTY_KEY">
+      <value />
+    </option>
+    <option name="EDITORCONFIG_PROPERTY_VALUE">
+      <value />
+    </option>
     <option name="EJS_OPEN">
       <value />
     </option>
@@ -816,6 +827,15 @@
     {{ block("string") }}
       </value>
     </option>
+    <option name="JSONPATH.CONTEXT">
+      <value />
+    </option>
+    <option name="JSONPATH.FUNCTION">
+      <value />
+    </option>
+    <option name="JSONPATH.IDENTIFIER">
+      <value />
+    </option>
     <option name="JSP_DIRECTIVE_NAME">
       <value />
     </option>
@@ -998,6 +1018,9 @@
     <option name="LOG_WARNING_OUTPUT">
       <value />
     </option>
+    <option name="LOMBOK_CLEAN">
+      <value />
+    </option>
     <option name="LUA_REGION_DESC">
       <value />
     </option>
@@ -1127,6 +1150,11 @@
     </option>
     <option name="MESSAGE_ARGUMENT">
       <value />
+    </option>
+    <option name="MONGODB.JSON.PROPERTY_KEY">
+      <value>
+    {{ block("string") }}
+      </value>
     </option>
     <option name="NG.BANANA_BINDING_ATTR_NAME">
       <value />
@@ -1313,6 +1341,12 @@
       </value>
     </option>
     <option name="PY.SELF_PARAMETER">
+      <value />
+    </option>
+    <option name="QL_ATTRIBUTE">
+      <value />
+    </option>
+    <option name="QL_FUNCTION">
       <value />
     </option>
     <option name="RDOC_DIRECTIVE">
@@ -1512,6 +1546,9 @@
     <option name="SPEL.METHOD_CALL">
       <value />
     </option>
+    <option name="SPEL.STATIC_FIELD">
+      <value />
+    </option>
     <option name="SPY-JS.EXCEPTION">
       <value />
     </option>
@@ -1528,6 +1565,12 @@
       <value />
     </option>
     <option name="SPY-JS.VALUE_HINT">
+      <value />
+    </option>
+    <option name="SQL_COLUMN">
+      <value />
+    </option>
+    <option name="SQL_PROCEDURE">
       <value />
     </option>
     <option name="SQUARE_BRACKETS_RAINBOW_COLOR0">
@@ -1560,16 +1603,6 @@
     <option name="SQUIGGLY_BRACKETS_RAINBOW_COLOR4">
       <value />
     </option>
-    <option name="STATIC_METHOD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="{{ text }}" />
-      </value>
-    </option>
-    <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="{{ text }}" />
-      </value>
-    </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
@@ -1578,6 +1611,16 @@
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="{{ constant }}" />
+      </value>
+    </option>
+    <option name="STATIC_METHOD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
+      </value>
+    </option>
+    <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
     <option name="STYLUS_VARIABLE">
