@@ -16,6 +16,22 @@
 
 ### Security
 
+## 0.3.17 - 2026-04-14
+
+Minor fixes mainly addressing Dark Mode colouring.
+
+- property files property keys are now highlighted as intended in dark mode
+- XML tags and custom tags are now highlighted as intended in dark mode
+- HTML tags are custom tags are now highlighted as intended in dark mode
+- HTML entity is now highlighted as intended
+- JSP bounds are now highlighted as punctuation
+- editorconfig hightlighting improvements
+- JSONPath hightlighting improvements
+- Lombok config hightlighting improvements
+- MongoDB JSON hightlighting improvements
+- SQL hightlighting improvements
+- SpEL hightlighting improvements
+
 ## 0.3.16 - 2026-04-09
 
 - fix: invalid string escape highlighting in dark mode.
