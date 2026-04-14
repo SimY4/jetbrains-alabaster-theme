@@ -560,7 +560,9 @@
       <value />
     </option>
     <option name="EL.BOUNDS">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+      </value>
     </option>
     <option name="ENUM_CONST">
       <value>
@@ -674,6 +676,7 @@
         <option name="FOREGROUND" value="{{ text }}" />
       </value>
     </option>
+    <option name="HTML_CUSTOM_TAG_NAME" baseAttributes="HTML_TAG_NAME" />
     <option name="HTML_TAG" baseAttributes="DEFAULT_TAG" />
     <option name="HTML_TAG_NAME">
       <value>
@@ -836,9 +839,7 @@
     <option name="JSONPATH.IDENTIFIER">
       <value />
     </option>
-    <option name="JSP_DIRECTIVE_NAME">
-      <value />
-    </option>
+    <option name="JSP_DIRECTIVE_NAME" baseAttributes="DEFAULT_KEYWORD" />
     <option name="JUPYTER_SELECTED_CELL">
       <value />
     </option>
