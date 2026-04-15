@@ -305,7 +305,7 @@
       <value>
 {% block "comment" %}
     {% if bg %}
-        <option name="FOREGROUND" value="000" />
+        <option name="FOREGROUND" value="6D6607" />
         <option name="BACKGROUND" value="FFFABC" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "AA3731" : "DFDF8E" }}" />
