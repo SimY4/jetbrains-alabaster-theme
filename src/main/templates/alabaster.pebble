@@ -20,10 +20,11 @@
     <option name="CARET_COLOR" value="{{ caret }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
     <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
-    <option name="INDENT_GUIDE" value="99999922" />
+    <option name="DOC_COMMENT_GUIDE" value="{{ bg ? "FFFABC" : light ? "AA3731" : "DFDF8E" }}"/>
     <option name="DOC_COMMENT_LINK" value="{{ bg ? "000" : light ? "325CC0" : "71ADE7" }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
     <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
+    <option name="INDENT_GUIDE" value="99999922" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
     <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
     <option name="READONLY_BACKGROUND" value="{{ background }}" />
