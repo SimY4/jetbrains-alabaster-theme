@@ -8,7 +8,8 @@
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
 {% set primaryBackground = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set searchMatchBackground = light ? "FFBC5D" : "00BFFF" %}
-{% set selectionBackground = bg ? "B4D8FD" : light ? "BFDBFE" : "293334" %}
+{% set selectionBackground = light ? "B4D8FD" : "293334" %}
+{% set selectionInactiveBackground = light ? "E0E0E0" : "18232D" %}
 {% set selectionForeground = light ? "000000" : "FFFFFF" %}
 {# ----- #}
 {
@@ -35,7 +36,7 @@
       "hoveredBackground": "#{{ hoveredBackground }}",
       "inactiveBackground": "#{{ background }}",
       "selectionBackground": "#{{ selectionBackground }}",
-      "selectionInactiveBackground": "#{{ selectionBackground }}",
+      "selectionInactiveBackground": "#{{ selectionInactiveBackground }}",
       "selectionForeground": "#{{ selectionForeground }}",
       "selectionInactiveForeground": "#{{ selectionForeground }}"
     },

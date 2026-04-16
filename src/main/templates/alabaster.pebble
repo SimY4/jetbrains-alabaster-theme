@@ -8,7 +8,7 @@
 {% set constant = light ? "8A3EB5" : "CC8BC9" %}
 {% set punctuation = light ? "A0A0A0" : "73808C" %}
 {% set search = light ? "FFBC5D" : "00BFFF" %}
-{% set selection = bg ? "B4D8FD" : light ? "BFDBFE" : "293334" %}
+{% set selection = light ? "B4D8FD" : "293334" %}
 {% set text = light ? "000000" : "CECECE" %}
 {# ----- #}
 <scheme name="Alabaster{{ name_suffix }}" version="142" parent_scheme="{{ light ? "Default" : "Darcula" }}">
