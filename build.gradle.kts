@@ -96,9 +96,10 @@ tasks.register("generate") {
   outputs.dir("src/main/resources/themes")
 
   doLast {
-    val engine = PebbleEngine.Builder().loader(FileLoader(file("src/main/templates/").absolutePath).apply {
-      suffix = ".pebble"
-    }).build()
+    val engine = PebbleEngine.Builder()
+      .strictVariables(true)
+      .loader(FileLoader(file("src/main/templates/").absolutePath).apply { suffix = ".pebble" })
+      .build()
     val themeTemplate = engine.getTemplate("theme")
     val schemeTemplate = engine.getTemplate("alabaster")
 
@@ -108,14 +109,21 @@ tasks.register("generate") {
     }
 
     listOf("bg", "dark", "mono", "mono-dark", "").forEach { variant ->
-      val nameSuffix = when(variant) {
-        "bg" -> " BG"
+      val nameSuffix = when (variant) {
         "" -> ""
+        "bg" -> " BG"
         else -> variant.split('-').joinToString(" ", prefix = " ") { word -> word.replaceFirstChar { it.titlecaseChar() } }
       }
       val fileSuffix = if (variant.isEmpty()) variant else "-$variant"
+      val background = when (variant) {
+        "" -> "F7F7F7"
+        "bg", "mono" -> "FFFFFF"
+        "mono-dark" -> "111111"
+        "dark" -> "0E1415"
+        else -> throw IllegalArgumentException("Unknown variant: $variant")
+      }
 
-      val context = mapOf("variant" to variant, "name_suffix" to nameSuffix, "file_suffix" to fileSuffix)
+      val context = mapOf("variant" to variant, "name_suffix" to nameSuffix, "file_suffix" to fileSuffix, "primary_background" to background)
       file("src/main/resources/themes/alabaster$fileSuffix.xml").writer().use { schemeTemplate.evaluate(it, context) }
       file("src/main/resources/themes/alabaster$fileSuffix.theme.json").writer().use { themeTemplate.evaluate(it, context) }
     }

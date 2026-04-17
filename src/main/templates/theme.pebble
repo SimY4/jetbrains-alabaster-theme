@@ -1,12 +1,13 @@
 {# @pebvariable name="file_suffix" type="String" #}
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
+{# @pebvariable name="primary_background" type="String" #}
+{% set bg = ["bg"] contains variant %}
 {% set light = ["", "bg", "mono"] contains variant %}
-{% set bg = ["bg", "mono", "mono-dark"] contains variant %}
+{% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
-{% set primaryBackground = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set searchMatchBackground = light ? "FFBC5D" : "00BFFF" %}
 {% set selectionBackground = light ? "B4D8FD" : "293334" %}
 {% set selectionInactiveBackground = light ? "E0E0E0" : "18232D" %}
@@ -41,7 +42,7 @@
       "selectionInactiveForeground": "#{{ selectionForeground }}"
     },
     "Editor": {
-      "background": "#{{ primaryBackground }}"
+      "background": "#{{ primary_background }}"
     },
     "SearchMatch": {
       "endBackground": "#{{ searchMatchBackground }}",
@@ -50,7 +51,7 @@
     "VersionControl": {
       "Log": {
         "Commit": {
-          "currentBranchBackground": "#{{ primaryBackground }}"
+          "currentBranchBackground": "#{{ primary_background }}"
         }
       }
     },

@@ -1,11 +1,11 @@
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
+{# @pebvariable name="primary_background" type="String" #}
+{% set bg = ["bg"] contains variant %}
 {% set light = ["", "bg", "mono"] contains variant %}
-{% set bg = ["bg", "mono", "mono-dark"] contains variant %}
+{% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
-{% set background = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set caret = light ? "43BEF4" : "00BFFF" %}
-{% set constant = light ? "8A3EB5" : "CC8BC9" %}
 {% set punctuation = light ? "A0A0A0" : "73808C" %}
 {% set search = light ? "FFBC5D" : "00BFFF" %}
 {% set selection = light ? "B4D8FD" : "293334" %}
@@ -19,16 +19,16 @@
   <colors>
     <option name="CARET_COLOR" value="{{ caret }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
-    <option name="DOC_COMMENT_GUIDE" value="{{ bg ? "6D6607" : light ? "AA3731" : "DFDF8E" }}"/>
-    <option name="DOC_COMMENT_LINK" value="{{ bg ? "000" : light ? "325CC0" : "71ADE7" }}"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{ primary_background }}"/>
+    <option name="DOC_COMMENT_GUIDE" value="{{ mono ? "999999" : bg ? "6D6607" : light ? "AA3731" : "DFDF8E" }}"/>
+    <option name="DOC_COMMENT_LINK" value="{{ bg ? "000000" : light ? "325CC0" : "71ADE7" }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
-    <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ primary_background }}"/>
     <option name="INDENT_GUIDE" value="99999922" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
     <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
-    <option name="READONLY_BACKGROUND" value="{{ background }}" />
-    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
+    <option name="READONLY_BACKGROUND" value="{{ primary_background }}" />
+    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ primary_background }}" />
     <option name="SELECTED_INDENT_GUIDE" value="99999922" />
     <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
     <option name="SELECTION_FOREGROUND" value="" />
@@ -231,17 +231,23 @@
     </option>
     <option name="Clojure Character">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+{% block "constant" %}
+    {% if mono %}
+        <option name="{{ light ? "BACKGROUND" : "FOREGROUND" }}" value="EEEEEE" />
+    {% else %}
+        <option name="FOREGROUND" value="{{ light ? "8A3EB5" : "CC8BC9" }}" />
+    {% endif %}
+{% endblock %}
       </value>
     </option>
     <option name="Clojure Keyword">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="Clojure Literal">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="Clojure Parentheses">
@@ -305,7 +311,12 @@
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
 {% block "comment" %}
-    {% if bg %}
+    {% if mono and light %}
+        <option name="FOREGROUND" value="999999" />
+    {% elseif mono %}
+        <option name="FOREGROUND" value="FFFFFF" />
+        <option name="BACKGROUND" value="333333" />
+    {% elseif bg %}
         <option name="FOREGROUND" value="6D6607" />
         <option name="BACKGROUND" value="FFFABC" />
     {% else %}
@@ -341,7 +352,7 @@
     </option>
     <option name="DEFAULT_CONSTANT">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT">
@@ -351,7 +362,9 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
       <value>
-    {% if bg %}
+    {% if mono %}
+        <option name="BACKGROUND" value="{{ light ? "EEEEEE" : "333333" }}" />
+    {% elseif bg %}
         <option name="BACKGROUND" value="FFFABC" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "325CC0" : "71ADE7" }}" />
@@ -386,12 +399,18 @@
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
 {% block "declaration" %}
-      {% if bg %}
+    {% if light and mono %}
+        <option name="FOREGROUND" value="000000" />
+        <option name="BACKGROUND" value="EEEEEE" />
+    {% elseif mono %}
+        <option name="FOREGROUND" value="EEEEEE" />
+        <option name="BACKGROUND" value="333333" />
+    {% elseif bg %}
         <option name="FOREGROUND" value="195B7C" />
         <option name="BACKGROUND" value="DBF1FF" />
-      {% else %}
+    {% else %}
         <option name="FOREGROUND" value="{{ light ? "325CC0" : "71ADE7" }}" />
-      {% endif %}
+    {% endif %}
 {% endblock %}
       </value>
     </option>
@@ -418,7 +437,9 @@
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
 {% block "escape" %}
-    {% if bg %}
+    {% if mono %}
+        <option name="BACKGROUND" value="{{ light ? "D9D9D9" : "FFFFFF20" }}" />
+    {% elseif bg %}
         <option name="BACKGROUND" value="DBECB6" />
     {% elseif light %}
         <option name="FOREGROUND" value="777777" />
@@ -455,7 +476,7 @@
     </option>
     <option name="DEFAULT_NUMBER">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="DEFAULT_OPERATION_SIGN">
@@ -496,7 +517,9 @@
     <option name="DEFAULT_STRING">
       <value>
 {% block "string" %}
-    {% if bg %}
+    {% if mono %}
+        <option name="{{ light ? "BACKGROUND" : "FOREGROUND" }}" value="EEEEEE" />
+    {% elseif bg %}
         <option name="FOREGROUND" value="3c5c00" />
         <option name="BACKGROUND" value="eefbd9" />
     {% else %}
@@ -573,7 +596,7 @@
     </option>
     <option name="ENUM_CONST">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
@@ -760,8 +783,10 @@
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
-    {% if bg %}
-        <option name="FOREGROUND" value="000" />
+    {% if mono %}
+        <option name="FOREGROUND" value="{{ light ? "999999" : "FFFFFF" }}" />
+    {% elseif bg %}
+        <option name="FOREGROUND" value="000000" />
     {% else %}
         <option name="FOREGROUND" value="{{ light ? "AA3731" : "DFDF8E" }}" />
     {% endif %}
@@ -780,7 +805,7 @@
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
     {{ block("comment") }}
-        <option name="EFFECT_COLOR" value="{{ light ? "695900" : "ffc66e" }}" />
+        <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -830,7 +855,7 @@
     <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
     <option name="JSON.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="JSON.PROPERTY_KEY">
@@ -888,7 +913,7 @@
     </option>
     <option name="KOTLIN_ENUM_ENTRY">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="KOTLIN_EXCLEXCL">
@@ -1619,7 +1644,7 @@
     </option>
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="STATIC_METHOD_ATTRIBUTES">
@@ -1646,7 +1671,7 @@
     </option>
     <option name="Scala Enum Singleton Case">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="Scala Immutable Collection" baseAttributes="DEFAULT_IDENTIFIER"/>
@@ -1681,7 +1706,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
-        <option name="BACKGROUND" value="{{ background }}" />
+        <option name="BACKGROUND" value="{{ primary_background }}" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
@@ -1807,12 +1832,12 @@
     </option>
     <option name="org.gradle.declarative.BOOLEAN">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="org.gradle.declarative.NULL">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="org.rust.ASSOC_FUNCTION" baseAttributes="DEFAULT_STATIC_METHOD" />
@@ -1895,7 +1920,7 @@
     </option>
     <option name="org.toml.BOOLEAN">
       <value>
-        <option name="FOREGROUND" value="{{ constant }}" />
+    {{ block("constant") }}
       </value>
     </option>
     <option name="org.toml.KEY">
