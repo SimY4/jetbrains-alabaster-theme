@@ -1,10 +1,10 @@
 {# @pebvariable name="name_suffix" type="String" #}
 {# @pebvariable name="variant" type="String" #}
+{# @pebvariable name="primary_background" type="String" #}
 {% set bg = ["bg"] contains variant %}
 {% set light = ["", "bg", "mono"] contains variant %}
 {% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
-{% set background = bg ? "FFFFFF" : (light ? "F7F7F7" : "0E1415") %}
 {% set caret = light ? "43BEF4" : "00BFFF" %}
 {% set punctuation = light ? "A0A0A0" : "73808C" %}
 {% set search = light ? "FFBC5D" : "00BFFF" %}
@@ -19,16 +19,16 @@
   <colors>
     <option name="CARET_COLOR" value="{{ caret }}"/>
     <option name="CARET_ROW_COLOR" value=""/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{{ background }}"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{ primary_background }}"/>
     <option name="DOC_COMMENT_GUIDE" value="{{ mono ? "999999" : bg ? "6D6607" : light ? "AA3731" : "DFDF8E" }}"/>
     <option name="DOC_COMMENT_LINK" value="{{ bg ? "000000" : light ? "325CC0" : "71ADE7" }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
-    <option name="GUTTER_BACKGROUND" value="{{ background }}"/>
+    <option name="GUTTER_BACKGROUND" value="{{ primary_background }}"/>
     <option name="INDENT_GUIDE" value="99999922" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
     <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
-    <option name="READONLY_BACKGROUND" value="{{ background }}" />
-    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ background }}" />
+    <option name="READONLY_BACKGROUND" value="{{ primary_background }}" />
+    <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ primary_background }}" />
     <option name="SELECTED_INDENT_GUIDE" value="99999922" />
     <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
     <option name="SELECTION_FOREGROUND" value="" />
@@ -314,6 +314,7 @@
     {% if mono and light %}
         <option name="FOREGROUND" value="999999" />
     {% elseif mono %}
+        <option name="FOREGROUND" value="FFFFFF" />
         <option name="BACKGROUND" value="333333" />
     {% elseif bg %}
         <option name="FOREGROUND" value="6D6607" />
@@ -399,6 +400,7 @@
       <value>
 {% block "declaration" %}
     {% if light and mono %}
+        <option name="FOREGROUND" value="000000" />
         <option name="BACKGROUND" value="EEEEEE" />
     {% elseif mono %}
         <option name="FOREGROUND" value="EEEEEE" />
@@ -782,9 +784,7 @@
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
     {% if mono %}
-    {% if light %}
-        <option name="FOREGROUND" value="999999" />
-    {% endif %}
+        <option name="FOREGROUND" value="{{ light ? "999999" : "FFFFFF" }}" />
     {% elseif bg %}
         <option name="FOREGROUND" value="000000" />
     {% else %}
@@ -1706,7 +1706,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
-        <option name="BACKGROUND" value="{{ background }}" />
+        <option name="BACKGROUND" value="{{ primary_background }}" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
