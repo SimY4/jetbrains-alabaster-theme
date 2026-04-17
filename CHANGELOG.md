@@ -16,6 +16,15 @@
 
 ### Security
 
+## 0.4.0 - 2026-04-17
+
+This release introduces Alabaster Mono and Mono Dark theme variants as well as few other fixes
+
+- BG comment text is now yellowish colour again.
+- Active and Inactive selections are now highlighted differently
+- Doc comment guide highlighting added
+- Highlighted reference highlighting adjusted
+
 ## 0.3.17 - 2026-04-14
 
 Minor fixes mainly addressing Dark Mode colouring.
