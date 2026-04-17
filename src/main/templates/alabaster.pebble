@@ -24,6 +24,12 @@
     <option name="DOC_COMMENT_LINK" value="{{ bg ? "000000" : light ? "325CC0" : "71ADE7" }}"/>
     <option name="FOLDED_TEXT_BORDER_COLOR" value=""/>
     <option name="GUTTER_BACKGROUND" value="{{ primary_background }}"/>
+    <option name="HTML_TAG_TREE_LEVEL0" value="{{ primary_background }}" />
+    <option name="HTML_TAG_TREE_LEVEL1" value="{{ primary_background }}" />
+    <option name="HTML_TAG_TREE_LEVEL2" value="{{ primary_background }}" />
+    <option name="HTML_TAG_TREE_LEVEL3" value="{{ primary_background }}" />
+    <option name="HTML_TAG_TREE_LEVEL4" value="{{ primary_background }}" />
+    <option name="HTML_TAG_TREE_LEVEL5" value="{{ primary_background }}" />
     <option name="INDENT_GUIDE" value="99999922" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
     <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
