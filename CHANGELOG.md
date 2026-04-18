@@ -16,6 +16,11 @@
 
 ### Security
 
+## 0.4.1 - 2026-04-18
+
+- Modernised plugin build and release pipeline.
+- Disable HTML tag tree rainbow highlighting.
+
 ## 0.4.0 - 2026-04-17
 
 This release introduces Alabaster Mono and Mono Dark theme variants as well as few other fixes
