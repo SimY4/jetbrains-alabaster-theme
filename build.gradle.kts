@@ -1,8 +1,7 @@
 import io.pebbletemplates.pebble.PebbleEngine
 import io.pebbletemplates.pebble.loader.FileLoader
 import org.jetbrains.changelog.*
-import org.jetbrains.kotlin.gradle.dsl.*
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 buildscript {
   repositories {
@@ -15,25 +14,14 @@ buildscript {
 }
 
 plugins {
-  id("java")
-  alias(libs.plugins.kotlin)
-  alias(libs.plugins.intelliJPlatform)
-  alias(libs.plugins.changelog)
-}
-
-group = providers.gradleProperty("pluginGroup").get()
-version = providers.gradleProperty("pluginVersion").get()
-
-repositories {
-  mavenCentral()
-  intellijPlatform {
-    defaultRepositories()
-  }
+  id("org.jetbrains.kotlin.jvm")
+  id("org.jetbrains.intellij.platform")
+  id("org.jetbrains.changelog")
 }
 
 dependencies {
   intellijPlatform {
-    intellijIdea(providers.gradleProperty("platformVersion"))
+    intellijIdea("2025.2.6.1")
     bundledPlugins("com.intellij.java", "org.jetbrains.kotlin", "org.jetbrains.plugins.yaml")
     plugins(
       "com.cursiveclojure.cursive:2025.2-252",
@@ -44,6 +32,7 @@ dependencies {
       "PsiViewer:252.23892.248",
       "PythonCore:252.27397.103"
     )
+    testFramework(TestFrameworkType.Platform)
   }
 }
 
@@ -51,42 +40,41 @@ intellijPlatform {
   buildSearchableOptions = false
 
   pluginConfiguration {
-    id = providers.gradleProperty("pluginGroup")
-    name = providers.gradleProperty("pluginName")
-    version = providers.gradleProperty("pluginVersion")
+    description = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
+      val start = "<!-- Plugin description -->"
+      val end = "<!-- Plugin description end -->"
+
+      with(it.lines()) {
+        if (!containsAll(listOf(start, end))) {
+          throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
+        }
+        subList(indexOf(start) + 1, indexOf(end)).joinToString("\n").let(::markdownToHTML)
+      }
+    }
 
     ideaVersion {
-      sinceBuild = providers.gradleProperty("pluginSinceBuild")
+      sinceBuild = "231"
     }
-  }
 
-  signing {
-    certificateChain = providers.environmentVariable("CERTIFICATE_CHAIN")
-    privateKey = providers.environmentVariable("PRIVATE_KEY")
-    password = providers.environmentVariable("PRIVATE_KEY_PASSWORD")
-  }
-
-  publishing {
-    token = providers.environmentVariable("PUBLISH_TOKEN")
-    channels = providers.gradleProperty("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
-  }
-
-  pluginVerification {
-    ides {
-      recommended()
+    val changelog = project.changelog // local variable for configuration cache compatibility
+    // Get the latest available change notes from the changelog file
+    changeNotes = version.map { pluginVersion ->
+      with(changelog) {
+        renderItem(
+          (getOrNull(pluginVersion) ?: getUnreleased())
+            .withHeader(false)
+            .withEmptySections(false),
+          Changelog.OutputType.HTML,
+        )
+      }
     }
   }
 }
 
 changelog {
-  version.set(providers.gradleProperty("pluginVersion"))
-  path.set(file("CHANGELOG.md").canonicalPath)
-  header.set(provider { "${version.get()} - ${date()}" })
-  headerParserRegex.set("""(\d\.\d+\.\d+)""".toRegex())
-  itemPrefix.set("-")
-  keepUnreleasedSection.set(true)
-  unreleasedTerm.set("[Unreleased]")
-  groups.set(listOf("Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"))
+  groups.empty()
+  repositoryUrl = providers.gradleProperty("pluginRepositoryUrl")
+  versionPrefix = ""
 }
 
 tasks.register("generate") {
@@ -135,37 +123,12 @@ tasks {
     delete("src/main/resources/themes")
   }
 
-  // Set the JVM compatibility versions
-  providers.gradleProperty("javaVersion").get().let {
-    withType<JavaCompile> {
-      sourceCompatibility = it
-      targetCompatibility = it
-    }
-    withType<KotlinCompile> {
-      compilerOptions {
-        apiVersion = KotlinVersion.KOTLIN_1_8
-        jvmTarget = JvmTarget.fromTarget(it)
-      }
-    }
-  }
-
   processResources {
     dependsOn("generate")
   }
 
   wrapper {
-    gradleVersion = providers.gradleProperty("gradleVersion").get()
-  }
-
-  patchPluginXml {
-    pluginVersion.set(providers.gradleProperty("pluginVersion"))
-    sinceBuild.set(providers.gradleProperty("pluginSinceBuild"))
-    untilBuild.set(providers.gradleProperty("pluginUntilBuild"))
-
-    // Get the latest available change notes from the changelog file
-    changeNotes.set(
-      provider { changelog.renderItem(changelog.getLatest(), Changelog.OutputType.HTML) }
-    )
+    gradleVersion = "9.4.1"
   }
 
   publishPlugin {

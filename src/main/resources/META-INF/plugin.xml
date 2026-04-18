@@ -3,33 +3,6 @@
     <id>com.github.simy4.alabaster</id>
     <name>Alabaster Theme</name>
     <vendor url="https://github.com/simy4">SimY4</vendor>
-    <description><![CDATA[
-<h2>Alabaster Color Scheme</h2>
-
-<p>
-A light & dark color schemes with minimal amount of highlighting for IntelliJ IDEA.
-</p>
-
-<p>Alabaster for IntelliJ is fine tuned for:</p>
-
-<ul>
-  <li>Clojure</li>
-  <li>Go</li>
-  <li>Java</li>
-  <li>JavaScript / TypeScript</li>
-  <li>Kotlin</li>
-  <li>Python</li>
-  <li>Rust</li>
-  <li>Scala</li>
-</ul>
-
-<p>
-Other languages work perfectly fine as well, but may do some extra unnecessary highlighting in some language-specific places.
-</p>
-
-<p>This is a simple wrapper around <a href="https://github.com/tonsky/intellij-alabaster">Alabaster Color Scheme</a></p>
-<p>LICENSE: <a href="https://github.com/simy4/jetbrains-alabaster-theme/blob/main/LICENSE">MIT</a></p>
-]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends optional="true" config-file="with-clojure.xml">com.cursiveclojure.cursive</depends>

@@ -1,4 +1,4 @@
-name: Publish
+name: Release
 on:
   release:
     types: [prereleased, released]
@@ -21,7 +21,6 @@ jobs:
         with:
           distribution: zulu
           java-version: 21
-          cache: gradle
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
@@ -37,8 +36,8 @@ jobs:
           mkdir -p "$(dirname "$RELEASE_NOTE")"
           echo "$CHANGELOG" > $RELEASE_NOTE
 
-          ./gradlew patchChangelog -PpluginVersion="${{ github.event.release.tag_name }}" --release-note-file=$RELEASE_NOTE
-          sed -i "s/pluginVersion = .*/pluginVersion = ${{ github.event.release.tag_name }}/" gradle.properties
+          sed -i "s/version = .*/version = ${{ github.event.release.tag_name }}/" gradle.properties
+          ./gradlew patchChangelog --release-note-file=$RELEASE_NOTE
 
       - name: 🚀 Publish Plugin
         env:
@@ -46,7 +45,7 @@ jobs:
           CERTIFICATE_CHAIN: ${{ secrets.CERTIFICATE_CHAIN }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           PRIVATE_KEY_PASSWORD: ${{ secrets.PRIVATE_KEY_PASSWORD }}
-        run: ./gradlew publishPlugin -PpluginVersion="${{ github.event.release.tag_name }}"
+        run: ./gradlew publishPlugin
 
       - name: Upload Release Asset
         env:
