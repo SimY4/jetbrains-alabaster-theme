@@ -1,6 +1,5 @@
 import io.pebbletemplates.pebble.PebbleEngine
 import io.pebbletemplates.pebble.loader.FileLoader
-import org.jetbrains.changelog.*
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 buildscript {
@@ -21,7 +20,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2025.2.6.1")
+    intellijIdea("2025.2.6.2")
     bundledPlugins("com.intellij.java", "org.jetbrains.kotlin", "org.jetbrains.plugins.yaml")
     plugins(
       "com.cursiveclojure.cursive:2025.2-252",
@@ -40,45 +39,15 @@ intellijPlatform {
   buildSearchableOptions = false
 
   pluginConfiguration {
-    description = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
-      val start = "<!-- Plugin description -->"
-      val end = "<!-- Plugin description end -->"
-
-      with(it.lines()) {
-        if (!containsAll(listOf(start, end))) {
-          throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
-        }
-        subList(indexOf(start) + 1, indexOf(end)).joinToString("\n").let(::markdownToHTML)
-      }
-    }
-
     ideaVersion {
       sinceBuild = "231"
-    }
-
-    val changelog = project.changelog // local variable for configuration cache compatibility
-    // Get the latest available change notes from the changelog file
-    changeNotes = version.map { pluginVersion ->
-      with(changelog) {
-        renderItem(
-          (getOrNull(pluginVersion) ?: getUnreleased())
-            .withHeader(false)
-            .withEmptySections(false),
-          Changelog.OutputType.HTML,
-        )
-      }
     }
   }
 }
 
-changelog {
-  groups.empty()
-  repositoryUrl = providers.gradleProperty("pluginRepositoryUrl")
-  versionPrefix = ""
-}
-
 tasks.register("generate") {
   notCompatibleWithConfigurationCache("Pebble classes are not serializable")
+  description = "Generates theme and scheme files from pebble templates"
 
   inputs.dir("src/main/templates")
   outputs.dir("src/main/resources/themes")
@@ -128,10 +97,6 @@ tasks {
   }
 
   wrapper {
-    gradleVersion = "9.4.1"
-  }
-
-  publishPlugin {
-    dependsOn(patchChangelog)
+    gradleVersion = "9.5.0"
   }
 }
