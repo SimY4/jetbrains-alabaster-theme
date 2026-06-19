@@ -4,24 +4,19 @@
 
 ## [Unreleased]
 
-### Added
+## [0.4.2] - 2026-06-19
 
-### Changed
+- fix: scala type parameter highlighting.
+- fix: kotlin type parameter highlighting.
+- fix: groovy static method access highlighting.
+- fix: angular template signal highlighting.
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
-## 0.4.1 - 2026-04-18
+## [0.4.1] - 2026-04-18
 
 - Modernised plugin build and release pipeline.
 - Disable HTML tag tree rainbow highlighting.
 
-## 0.4.0 - 2026-04-17
+## [0.4.0] - 2026-04-17
 
 This release introduces Alabaster Mono and Mono Dark theme variants as well as few other fixes
 
@@ -30,7 +25,7 @@ This release introduces Alabaster Mono and Mono Dark theme variants as well as f
 - Doc comment guide highlighting added
 - Highlighted reference highlighting adjusted
 
-## 0.3.17 - 2026-04-14
+## [0.3.17] - 2026-04-14
 
 Minor fixes mainly addressing Dark Mode colouring.
 
@@ -46,21 +41,21 @@ Minor fixes mainly addressing Dark Mode colouring.
 - SQL hightlighting improvements
 - SpEL hightlighting improvements
 
-## 0.3.16 - 2026-04-09
+## [0.3.16] - 2026-04-09
 
 - fix: invalid string escape highlighting in dark mode.
 - fix: uniform error highlighting.
 
-## 0.3.15 - 2026-04-06
+## [0.3.15] - 2026-04-06
 
 This release addresses bright blue background in BG color scheme.
 
-## 0.3.14 - 2026-04-06
+## [0.3.14] - 2026-04-06
 
 - Adjusted colors to closely match the original
 - IDE islands now have borders
 
-## 0.3.13 - 2026-03-18
+## [0.3.13] - 2026-03-18
 
 - Changes to caret and selection highlighting
 - Fixes to not top stack trace line highlighting in debug mode
@@ -70,28 +65,28 @@ This release addresses bright blue background in BG color scheme.
 - TOML boolean highlighting
 - YAML anchor/reference highlighting
 
-## 0.3.12 - 2026-03-03
+## [0.3.12] - 2026-03-03
 
 - Improvements to YAML language highlighting
 - Improvements to pebble language highlighting
 - Improvements to [highlight matching braces plugin](https://plugins.jetbrains.com/plugin/10465-highlightbracketpair) highlighting
 
-## 0.3.11 - 2026-02-26
+## [0.3.11] - 2026-02-26
 
 - Folded brackets are now highlighted the same way as regular brackets
 - Caret cursor highlighting changes
 - Matching braces highlighting changes
 - Indent guides highlighting changes
 
-## 0.3.10 - 2026-02-25
+## [0.3.10] - 2026-02-25
 
 Start highlighting punctuation with greyish colour to align better with original.
 
-## 0.3.9 - 2026-02-09
+## [0.3.9] - 2026-02-09
 
 This release contains fixes to declaration highlighting for non-bg themes.
 
-## 0.3.8 - 2026-02-09
+## [0.3.8] - 2026-02-09
 
 This release ports some of the ideas from the most recent blogpost about Clojure highlighting into IntelliJ. These changes only affect Clojure language support:
 
@@ -103,7 +98,7 @@ This release ports some of the ideas from the most recent blogpost about Clojure
 - Custom language comments and number literal highlighting fixes
 - Kotlin punctuation highlighting fixes
 
-## 0.3.7 - 2025-12-31
+## [0.3.7] - 2025-12-31
 
 Minor changes in this release:
 
@@ -111,7 +106,7 @@ Minor changes in this release:
 - Scala enum singleton values highlighted as constants.
 - Inlay hints in a non-BG theme now has a slight background accent to help with highlighting Kotlin's generated code.
 
-## 0.3.6 - 2025-12-09
+## [0.3.6] - 2025-12-09
 
 Minor changes in this release:
 
@@ -120,7 +115,7 @@ Minor changes in this release:
 - Updated to latest intellij-platform-plugin-template
 - Updated to pebble 4.0.0
 
-## 0.3.5 - 2025-11-23
+## [0.3.5] - 2025-11-23
 
 This release adds Rust and Clojure annotators to help with highlighting. Both Rust and Clojure received an uplift with many adjustments to actualize their highlighting.
 
@@ -130,7 +125,7 @@ Other changes in this release:
 - Project search colors now match in-file search colors
 - Static final fields are not highlighted as constants.
 
-## 0.3.4 - 2025-11-22
+## [0.3.4] - 2025-11-22
 
 This release is focusing on improving search and editor interfaces highlighting.
 
@@ -139,7 +134,7 @@ And a few other changes:
 - Added unmatched braces highlighting
 - Highlight enum constants
 
-## 0.3.3 - 2025-11-19
+## [0.3.3] - 2025-11-19
 
 This release is mainly focuses on improving string and regex highlighting in regards to valid and invalid escape sequences. Highlighting behavior should now follow the original theme more closely.
 
@@ -149,7 +144,7 @@ And also brings a few fixes:
 - JavaScript fields are no longer highlighted.
 - Fixed XML attribute highlighting in BG
 
-## 0.3.2 - 2025-11-16
+## [0.3.2] - 2025-11-16
 
 This release adds highlighting for deprecated and unused chunks of code.
 
@@ -157,31 +152,31 @@ Fixes the background ordering issue causing text to appear with different unmatc
 
 And fixes and issue with Go annotator was not being property registered.
 
-## 0.3.1 - 2025-11-12
+## [0.3.1] - 2025-11-12
 
 A quick follow up addressing missing language attribute on annotator configurations.
 
 And two new additional annotators for Python and Go.
 
-## 0.3.0 - 2025-11-12
+## [0.3.0] - 2025-11-12
 
 Third attempt to add annotator to `true`, `false` and `null` keywords. Java, JavaScript, Kotlin and Scala made it into first cut. As always, feedback and bug reports are welcome.
 
 Additionally, fixed Kotlin name arguments highlighting.
 
-## 0.2.8 - 2025-11-10
+## [0.2.8] - 2025-11-10
 
 ### Fixed
 
 - Fixed debugger colours once more.
 
-## 0.2.7 - 2025-11-10
+## [0.2.7] - 2025-11-10
 
 ### Changed
 
 - VCS current branch commit highlighting is not blueish anymore.
 
-## 0.2.6 - 2025-11-08
+## [0.2.6] - 2025-11-08
 
 ### Fixed
 
@@ -194,20 +189,20 @@ Additionally, fixed Kotlin name arguments highlighting.
 - Fixed Kotlin colon highlighting
 - Fixed Go highlighting for calls vs declarations
 
-## 0.2.5 - 2025-11-08
+## [0.2.5] - 2025-11-08
 
 ### Fixed
 
 - Editor background colors not having an effect
 
-## 0.2.4 - 2025-11-08
+## [0.2.4] - 2025-11-08
 
 ### Changed
 
 - Errors highlighting to be more subtle
 - More fixes to calls vs declaration highlighting
 
-## 0.2.3 - 2025-11-05
+## [0.2.3] - 2025-11-05
 
 ### Added
 
@@ -219,7 +214,7 @@ Additionally, fixed Kotlin name arguments highlighting.
 - Fixed ctrl clickable highlighting
 - Fixed sidebar being hardly distinguishable from editor background
 
-## 0.2.2 - 2025-11-04
+## [0.2.2] - 2025-11-04
 
 ### Changed
 
@@ -235,14 +230,14 @@ Additionally, fixed Kotlin name arguments highlighting.
 - Fixes for XPath and Shell script highlighting
 - Dim down file colours
 
-## 0.2.1 - 2025-11-03
+## [0.2.1] - 2025-11-03
 
 ### Changed
 
 - New templating engine for generating color schemes across different variants and flavors of the theme.
 - More work on porting Alabaster Themes
 
-## 0.2.0 - 2025-10-29
+## [0.2.0] - 2025-10-29
 
 ### Added
 
@@ -257,8 +252,41 @@ Additionally, fixed Kotlin name arguments highlighting.
 - Release pipeline
 - Theme and colour scheme name clashes
 
-## 0.1.0 - 2025-10-27
+## [0.1.0] - 2025-10-27
 
 ### Added
 
 - Initial port of Alabaster Themes by Tonsky from [Alabaster Color Scheme](https://github.com/tonsky/intellij-alabaster)
+
+[Unreleased]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.2...HEAD
+[0.4.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.1...0.4.2
+[0.4.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.0...0.4.1
+[0.4.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.17...0.4.0
+[0.3.17]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.16...0.3.17
+[0.3.16]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.15...0.3.16
+[0.3.15]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.14...0.3.15
+[0.3.14]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.13...0.3.14
+[0.3.13]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.12...0.3.13
+[0.3.12]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.11...0.3.12
+[0.3.11]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.10...0.3.11
+[0.3.10]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.9...0.3.10
+[0.3.9]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.8...0.3.9
+[0.3.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.7...0.3.8
+[0.3.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.6...0.3.7
+[0.3.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.5...0.3.6
+[0.3.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.4...0.3.5
+[0.3.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.3...0.3.4
+[0.3.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.2...0.3.3
+[0.3.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.1...0.3.2
+[0.3.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.0...0.3.1
+[0.3.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.8...0.3.0
+[0.2.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.7...0.2.8
+[0.2.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.6...0.2.7
+[0.2.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.5...0.2.6
+[0.2.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.4...0.2.5
+[0.2.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.3...0.2.4
+[0.2.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.2...0.2.3
+[0.2.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.1...0.2.2
+[0.2.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/SimY4/jetbrains-alabaster-theme/commits/0.1.0
