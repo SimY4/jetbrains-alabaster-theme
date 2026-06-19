@@ -970,6 +970,7 @@
     <option name="KOTLIN_SMART_CONSTANT">
       <value />
     </option>
+    <option name="KOTLIN_TYPE_PARAMETER" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
     <option name="KOTLIN_VARIABLE_AS_FUNCTION">
       <value />
     </option>
@@ -1205,6 +1206,7 @@
     <option name="NG.PROPERTY_BINDING_ATTR_NAME">
       <value />
     </option>
+    <option name="NG.SIGNAL" baseAttributes="TS.INSTANCE_MEMBER_FUNCTION" />
     <option name="NG.TEMPLATE_BINDINGS_ATTR_NAME">
       <value />
     </option>
@@ -1692,6 +1694,7 @@
       <value />
     </option>
     <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
+    <option name="Static method access" baseAttributes="STATIC_METHOD_ATTRIBUTES" />
     <option name="Static property reference ID">
       <value />
     </option>
