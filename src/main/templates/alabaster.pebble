@@ -1691,6 +1691,7 @@
     <option name="Scala Predefined types">
       <value />
     </option>
+    <option name="Scala Type parameter" baseAttributes="TYPE_PARAMETER_NAME_ATTRIBUTES" />
     <option name="Static property reference ID">
       <value />
     </option>
