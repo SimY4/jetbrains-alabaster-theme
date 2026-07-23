@@ -36,3 +36,4 @@ jobs:
         with:
           name: Alabaster.Theme
           path: ./build/distributions/*.zip
+          archive: false
