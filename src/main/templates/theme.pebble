@@ -7,11 +7,11 @@
 {% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set background = light ? "EEEEEE" : "2E2E2E" %}
+{% set foreground = light ? "000000" : "FFFFFF" %}
 {% set hoveredBackground = light ? "F3F3F3" : "565B5C"  %}
 {% set searchMatchBackground = light ? "FFBC5D" : "00BFFF" %}
 {% set selectionBackground = light ? "B4D8FD" : "293334" %}
 {% set selectionInactiveBackground = light ? "E0E0E0" : "18232D" %}
-{% set selectionForeground = light ? "000000" : "FFFFFF" %}
 {# ----- #}
 {
   "author": "Alex Simkin",
@@ -32,17 +32,23 @@
       "toolWindowAlpha": 0.2
     },
     "*": {
+      "foreground":  "#{{ foreground }}",
       "background":  "#{{ background }}",
       "disabledBackground": "#{{ background }}",
-      "hoveredBackground": "#{{ hoveredBackground }}",
       "inactiveBackground": "#{{ background }}",
       "selectionBackground": "#{{ selectionBackground }}",
+      "selectionForeground": "#{{ foreground }}",
       "selectionInactiveBackground": "#{{ selectionInactiveBackground }}",
-      "selectionForeground": "#{{ selectionForeground }}",
-      "selectionInactiveForeground": "#{{ selectionForeground }}"
+      "selectionInactiveForeground": "#{{ foreground }}",
+      "focusColor": "#{{ selectionBackground }}",
+      "infoForeground": "#{{ foreground }}"
     },
     "Editor": {
-      "background": "#{{ primary_background }}"
+      "background": "#{{ primary_background }}",
+      "ToolTip": {
+        "errorBackground": "#{{ light ? "FFE0E0" : "2B1D1E" }}",
+        "errorBorder": "#{{ light ? "AA3731" : "CC3333" }}"
+      }
     },
     "SearchMatch": {
       "endBackground": "#{{ searchMatchBackground }}",
