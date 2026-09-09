@@ -1184,6 +1184,15 @@
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
+    <option name="MERMAID_CONSTANT" baseAttributes="DEFAULT_CONSTANT" />
+    <option name="MERMAID_DIAGRAM_NAME" baseAttributes="MERMAID_KEYWORD" />
+    <option name="MERMAID_EDGE" baseAttributes="MERMAID_OPERATOR" />
+    <option name="MERMAID_FRONTMATTER_DELIMITER" baseAttributes="MERMAID_STRING" />
+    <option name="MERMAID_GENERIC" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="MERMAID_IDENTIFIER" baseAttributes="DEFAULT_IDENTIFIER" />
+    <option name="MERMAID_KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
+    <option name="MERMAID_NOTE" baseAttributes="MERMAID_STRING" />
+    <option name="MERMAID_TITLE" baseAttributes="MERMAID_STRING" />
     <option name="MESSAGE_ARGUMENT">
       <value />
     </option>
