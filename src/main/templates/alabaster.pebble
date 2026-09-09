@@ -800,7 +800,8 @@
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-    {{ block("comment") }}
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+        <option name="BACKGROUND" value="99999922" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
@@ -810,7 +811,8 @@
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-    {{ block("comment") }}
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+        <option name="BACKGROUND" value="99999922" />
         <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
