@@ -6,6 +6,7 @@
 {% set mono = ["mono", "mono-dark"] contains variant %}
 {# ----- #}
 {% set caret = light ? "43BEF4" : "00BFFF" %}
+{% set inlay_background = "99999922" %}
 {% set punctuation = light ? "A0A0A0" : "73808C" %}
 {% set search = light ? "FFBC5D" : "00BFFF" %}
 {% set selection = light ? "B4D8FD" : "293334" %}
@@ -30,12 +31,12 @@
     <option name="HTML_TAG_TREE_LEVEL3" value="{{ primary_background }}" />
     <option name="HTML_TAG_TREE_LEVEL4" value="{{ primary_background }}" />
     <option name="HTML_TAG_TREE_LEVEL5" value="{{ primary_background }}" />
-    <option name="INDENT_GUIDE" value="99999922" />
+    <option name="INDENT_GUIDE" value="{{ inlay_background }}" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{ light ? "0" : "FFFFFF" }}"/>
     <option name="MATCHED_BRACES_INDENT_GUIDE_COLOR" value="{{ selection }}" />
     <option name="READONLY_BACKGROUND" value="{{ primary_background }}" />
     <option name="READONLY_FRAGMENT_BACKGROUND" value="{{ primary_background }}" />
-    <option name="SELECTED_INDENT_GUIDE" value="99999922" />
+    <option name="SELECTED_INDENT_GUIDE" value="{{ inlay_background }}" />
     <option name="SELECTION_BACKGROUND" value="{{ selection }}" />
     <option name="SELECTION_FOREGROUND" value="" />
   </colors>
@@ -781,27 +782,19 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-    {{ block("comment") }}
-    {% if not bg %}
-        <option name="BACKGROUND" value="99999922" />
-    {% endif %}
+        <option name="FOREGROUND" value="{{ punctuation }}" />
+        <option name="BACKGROUND" value="{{ inlay_background }}" />
       </value>
     </option>
     <option name="INLAY_TEXT_WITHOUT_BACKGROUND">
       <value>
-    {% if mono %}
-        <option name="FOREGROUND" value="{{ light ? "999999" : "FFFFFF" }}" />
-    {% elseif bg %}
-        <option name="FOREGROUND" value="000000" />
-    {% else %}
-        <option name="FOREGROUND" value="{{ light ? "AA3731" : "DFDF8E" }}" />
-    {% endif %}
+        <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
         <option name="FOREGROUND" value="{{ punctuation }}" />
-        <option name="BACKGROUND" value="99999922" />
+        <option name="BACKGROUND" value="{{ inlay_background }}" />
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
@@ -812,7 +805,7 @@
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
         <option name="FOREGROUND" value="{{ punctuation }}" />
-        <option name="BACKGROUND" value="99999922" />
+        <option name="BACKGROUND" value="{{ inlay_background }}" />
         <option name="EFFECT_COLOR" value="{{ search }}" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
