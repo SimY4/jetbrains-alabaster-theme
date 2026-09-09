@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-09-09
+
+- feat: Change inline parameter highlighting to metadata.
+- feat: Change inlay hints highlighting to metadata.
+- feat: Mermaid syntax support.
+- fix: error tooltip being completely black.
+
 ## [0.4.2] - 2026-06-19
 
 - fix: scala type parameter highlighting.
@@ -258,35 +265,36 @@ Additionally, fixed Kotlin name arguments highlighting.
 
 - Initial port of Alabaster Themes by Tonsky from [Alabaster Color Scheme](https://github.com/tonsky/intellij-alabaster)
 
-[Unreleased]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.2...HEAD
-[0.4.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.1...0.4.2
-[0.4.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.4.0...0.4.1
-[0.4.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.17...0.4.0
-[0.3.17]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.16...0.3.17
-[0.3.16]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.15...0.3.16
-[0.3.15]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.14...0.3.15
-[0.3.14]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.13...0.3.14
-[0.3.13]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.12...0.3.13
-[0.3.12]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.11...0.3.12
-[0.3.11]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.10...0.3.11
-[0.3.10]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.9...0.3.10
-[0.3.9]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.8...0.3.9
-[0.3.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.7...0.3.8
-[0.3.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.6...0.3.7
-[0.3.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.5...0.3.6
-[0.3.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.4...0.3.5
-[0.3.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.3...0.3.4
-[0.3.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.2...0.3.3
-[0.3.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.1...0.3.2
-[0.3.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.3.0...0.3.1
-[0.3.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.8...0.3.0
-[0.2.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.7...0.2.8
-[0.2.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.6...0.2.7
-[0.2.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.5...0.2.6
-[0.2.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.4...0.2.5
-[0.2.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.3...0.2.4
-[0.2.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.2...0.2.3
-[0.2.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.1...0.2.2
-[0.2.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.2.0...0.2.1
-[0.2.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/0.1.0...0.2.0
-[0.1.0]: https://github.com/SimY4/jetbrains-alabaster-theme/commits/0.1.0
+[Unreleased]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.2...v0.4.3
+[0.4.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.1...v0.4.2
+[0.4.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.17...v0.4.0
+[0.3.17]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.16...v0.3.17
+[0.3.16]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.15...v0.3.16
+[0.3.15]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.14...v0.3.15
+[0.3.14]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.13...v0.3.14
+[0.3.13]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.12...v0.3.13
+[0.3.12]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.11...v0.3.12
+[0.3.11]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.10...v0.3.11
+[0.3.10]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.9...v0.3.10
+[0.3.9]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.8...v0.3.9
+[0.3.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.7...v0.3.8
+[0.3.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.6...v0.3.7
+[0.3.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.5...v0.3.6
+[0.3.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.4...v0.3.5
+[0.3.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.3...v0.3.4
+[0.3.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.8...v0.3.0
+[0.2.8]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.7...v0.2.8
+[0.2.7]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.6...v0.2.7
+[0.2.6]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.5...v0.2.6
+[0.2.5]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.4...v0.2.5
+[0.2.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.3...v0.2.4
+[0.2.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.2...v0.2.3
+[0.2.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/SimY4/jetbrains-alabaster-theme/commits/v0.1.0
