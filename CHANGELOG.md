@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [0.4.4] - 2026-10-29
+
+- fix: debugger line and smart step into guides highlighting
+- fix: live template attribute highlighting
+
 ## [0.4.3] - 2026-09-09
 
 - feat: Change inline parameter highlighting to metadata.
@@ -265,7 +270,8 @@ Additionally, fixed Kotlin name arguments highlighting.
 
 - Initial port of Alabaster Themes by Tonsky from [Alabaster Color Scheme](https://github.com/tonsky/intellij-alabaster)
 
-[Unreleased]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/SimY4/jetbrains-alabaster-theme/compare/v0.4.0...v0.4.1
