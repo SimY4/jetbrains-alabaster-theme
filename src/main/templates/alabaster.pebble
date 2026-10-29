@@ -310,6 +310,12 @@
         <option name="FOREGROUND" value="{{ punctuation }}" />
       </value>
     </option>
+    <option name="DEBUGGER_SMART_STEP_INTO_SELECTION">
+      <value>
+        <option name="BACKGROUND" value="{{ selection }}"/>
+      </value>
+    </option>
+    <option name="DEBUGGER_SMART_STEP_INTO_TARGET" baseAttributes="SEARCH_RESULT_ATTRIBUTES" />
     <option name="DEFAULT_ATTRIBUTE">
       <value>
         <option name="FOREGROUND" value="{{ text }}" />
@@ -619,7 +625,7 @@
     </option>
     <option name="EXECUTIONPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="{{ selection }}"/>
+        <option name="BACKGROUND" value="{{ selection }}55"/>
       </value>
     </option>
     <option name="FIRST SYMBOL IN LIST">
@@ -989,10 +995,16 @@
       </value>
     </option>
     <option name="LIVE_TEMPLATE_ATTRIBUTES">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ selection }}" />
+        <option name="EFFECT_TYPE" value="0" />
+      </value>
     </option>
     <option name="LIVE_TEMPLATE_INACTIVE_SEGMENT">
-      <value />
+      <value>
+        <option name="EFFECT_COLOR" value="{{ search }}" />
+        <option name="EFFECT_TYPE" value="0" />
+      </value>
     </option>
     <option name="LOCALE.MSGCTXT_KEYWORD">
       <value />
