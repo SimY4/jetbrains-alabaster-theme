@@ -20,16 +20,16 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2026.2.3")
+    intellijIdea("2025.3.6.1")
     bundledPlugins("com.intellij.java", "org.jetbrains.kotlin", "org.jetbrains.plugins.yaml")
     plugins(
-      "com.cursiveclojure.cursive:2026.2-262",
-      "com.jetbrains.rust:262.11879.102",
-      "JavaScript:262.11879.100",
-      "org.intellij.scala:2026.2.21",
-      "org.jetbrains.plugins.go:262.11879.100",
-      "PsiViewer:2026.2",
-      "PythonCore:262.11879.100"
+      "com.cursiveclojure.cursive:2025.2.1-253",
+      "com.jetbrains.rust:253.33514.21",
+      "JavaScript:253.33813.99",
+      "org.intellij.scala:2025.3.41",
+      "org.jetbrains.plugins.go:253.33514.17",
+      "PsiViewer:253.7181",
+      "PythonCore:253.33813.99"
     )
     testFramework(TestFrameworkType.Platform)
   }
