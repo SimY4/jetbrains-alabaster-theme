@@ -1,5 +1,5 @@
 [versions]
-pebble = "4.1.2"
+pebble = "4.1.3"
 
 [libraries]
 pebble = { module = "io.pebbletemplates:pebble", version.ref = "pebble" }
